@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Fontspring";
+  src: local("Fontspring"), url("./fonts/Fontspring-DEMO-voire-black.otf") format("otf");
+}
+
 @keyframes gradient-animation {
   0% {
     background-position: 0% 50%;
@@ -15,7 +20,7 @@
 }
 
 .la {
-  font-family: "Outfit", sans-serif;
+  font-family: "Fontspring";
   background-color: #0d1a2d;
   display: flex;
   justify-content: center;
