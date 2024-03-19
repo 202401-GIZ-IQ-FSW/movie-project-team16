@@ -2,32 +2,213 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.la {
+  font-family: "Outfit", sans-serif;
+  background-color: #0d1a2d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-} */
+h2,
+p {
+  transition: 400ms;
+  margin: 0px;
+}
+
+h2:hover {
+  color: #09fefb;
+  cursor: pointer;
+}
+.main-container {
+  position: relative;
+}
+.card-container {
+  background-color: #15273f;
+  border-radius: 16px;
+  box-shadow: 12px 11px 20px -4px rgba(0, 0, 0, 0.263);
+  display: flex;
+  flex-direction: column;
+  row-gap: 18px;
+  width: 290px;
+  padding: 24px;
+  padding-bottom: 28px;
+  transition: 800ms;
+  transition-delay: 25ms;
+  z-index: 1;
+}
+.gradient {
+  border-radius: 18px;
+  z-index: -1;
+  background-color: #74ebd5;
+  background-image: linear-gradient(90deg, #94dce7 0%, #fbdae0 50%);
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+  transition: 800ms;
+  background-size: 360% 360%;
+  animation: gradient-animation 3s ease infinite;
+}
+
+.card-container:hover {
+  background-color: #0b2446e2;
+  transform: scale(1.01) translateY(-16px);
+  box-shadow: 8px 8px 10px -4px rgba(0, 0, 0, 0.263);
+}
+
+.card-container p {
+  color: #6b7f9f;
+  font-size: 18px;
+  font-weight: 300;
+  transition: all 800ms ease-in;
+  transition-delay: 25ms;
+}
+
+.card-container:hover p {
+  color: hsl(217, 21%, 70%);
+}
+.main-container:hover .gradient {
+  transform: scale(1.02) translateY(-16px);
+  border-radius: 16px;
+  opacity: 1;
+}
+.card-container > img {
+  border-radius: 10px;
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 22px;
+  color: #f5feff;
+}
+
+.cool-kids {
+  display: flex;
+  justify-content: space-between;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  color: #09fefb;
+  display: flex;
+  column-gap: 8px;
+  font-weight: 500;
+}
+
+.expiry-date {
+  display: flex;
+  align-items: center;
+  color: #89acd5;
+  display: flex;
+  column-gap: 8px;
+  font-weight: 500;
+}
+
+.author-container p {
+  font-size: 16px;
+}
+.author-container {
+  column-gap: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.author-container > img {
+  width: 28px;
+  border: 1px solid #fff;
+  border-radius: 28px;
+}
+.author {
+  font-weight: 400;
+  color: #bcc8d9;
+  transition: 400ms;
+}
+
+.author:hover {
+  color: #09fefb;
+  cursor: pointer;
+}
+.overlay {
+  opacity: 0;
+  z-index: 2;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  border-radius: 12px;
+  background-color: hsla(178, 100%, 50%, 0.533);
+  cursor: pointer;
+  transition: opacity 400ms ease-in-out;
+}
+.image-container:hover .overlay {
+  opacity: 1;
+}
+.image-container {
+  height: 290px;
+  width: 290px;
+  position: relative;
+}
+.image-container > img {
+  border-radius: 12px;
+}
+
+hr {
+  margin: 0;
+  width: 100%;
+  border-color: #86a9d413;
+}
+
+/* # Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+- Soft blue: hsl(215, 51%, 70%)
+- Cyan: hsl(178, 100%, 50%)
+
+### Neutral
+
+- Very dark blue (main BG): hsl(217, 54%, 11%)
+- Very dark blue (card BG): hsl(216, 50%, 16%)
+- Very dark blue (line): hsl(215, 32%, 27%)
+- White: hsl(0, 0%, 100%)
+
+## Typography
+
+### Body Copy
+
+- Font size (paragraph): 18px
+
+### Font
+
+- Family: [Outfit](https://fonts.google.com/specimen/Outfit)
+- Weights: 300, 400, 600 */
