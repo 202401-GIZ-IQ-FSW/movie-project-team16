@@ -8,8 +8,19 @@ export default function Home() {
     <>
     <Nav/>
     {/* <div>test</div> */}
-    <div className="la">
+    <div className=" la flex justify-center items-center flex-wrap  h-screen">
+      <div className=" mx-8">
     <Card/>
+
+      </div>
+      <div className=" mx-8">
+    <Card/>
+
+      </div>
+      <div className=" mx-8">
+    <Card/>
+
+      </div>
 
     </div>
     <Footer/>
