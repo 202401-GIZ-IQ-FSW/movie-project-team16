@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = { reactStrictMode: false,
+const nextConfig = {
     swcMinify: true,
     reactStrictMode: false,
-    image: {
+    images: {
       domains: ["image.tmdb.org"],
     },
   };

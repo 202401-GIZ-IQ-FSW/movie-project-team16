@@ -1,11 +1,9 @@
-"use client";
-import Image from "next/image";
+"use clients";
 import React, { useEffect, useRef, useState } from "react";
 import Nav from "./components/navbar";
 import Footer from "./components/footer";
 import Card from "./components/card";
 import GlobalApi from "./services/globalApi";
-import PopularMovieList from "./components/popularMovieList";
 import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
 
 export default function Home() {
@@ -37,9 +35,10 @@ export default function Home() {
           onClick={() => slideLeft(elementRef.current)}
           className="text-[50px] text-white
            p-2 z-10 cursor-pointer 
-            hidden md:block absolute"
+            hidden md:block absolute top-1/2"
         />
         <div
+         ref={elementRef}
           className=" la flex overflow-x-auto gap-8
          scrollbar-none scroll-smooth pt-4 px-3 pb-4"
         >
@@ -52,11 +51,11 @@ export default function Home() {
         <IoChevronForwardOutline
           onClick={() => slideRight(elementRef.current)}
           className="text-[50px] text-white hidden md:block
-           p-2 cursor-pointer z-10 top-0
-            absolute right-0"
+           p-2 cursor-pointer z-10 
+            absolute right-0 top-1/2"
         />
       </div>
-      <PopularMovieList/>
+      {/* <PopularMovieList/> */}
       <Footer />
       <div className="blob"></div>
       <div className="blob1"></div>

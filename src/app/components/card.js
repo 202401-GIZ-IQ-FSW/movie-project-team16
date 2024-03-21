@@ -10,14 +10,11 @@ export default function Card({movie}) {
     <div className="card-container bg-gray-900 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-20 ">
       <div className="image-container">
         <Image
-          src={IMAGE_BASE_URL+movie.backdrop_path} 
+          src={IMAGE_BASE_URL+movie.poster_path} 
           alt="cube image"
           width="290"
           height="290"
         />
-        {/* <div className="overlay">
-          <img src="./images/icon-view.svg" alt="view" />
-        </div> */}
       </div>
       <div className="px-5">
         <h2 className="text-xl">{movie.original_title}</h2>
