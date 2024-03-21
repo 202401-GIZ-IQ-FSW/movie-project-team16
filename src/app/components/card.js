@@ -1,43 +1,34 @@
 import React from "react";
 import Image from "next/image";
+import { Button } from "flowbite-react";
 
 export default function Card() {
   return (
-    <div className="card-container">
+    <div className="card-container bg-gray-900 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-20 ">
       <div className="image-container">
-        {/* <Image
-          src="./images/image-equilibrium.jpg"
+        <Image
+          src="/image-equilibrium.jpg"
           alt="cube image"
           width="290"
           height="290"
-        /> */}
-        <div className="overlay">
+        />
+        {/* <div className="overlay">
           <img src="./images/icon-view.svg" alt="view" />
-        </div>
+        </div> */}
       </div>
-      <h2 className=" text-2xl">Equilibrium #3429</h2>
-      <p>Our Equilibrium collection promotes balance and calm.</p>
-      <div className="small-container">
-        <div className="price">
-          <img src="./images/icon-ethereum.svg" />
-          <p>0.041 ETH</p>
-        </div>
-        <div className="expiry">
-          <img src="./images/icon-clock.svg" />
-          <p>3 days left</p>
-        </div>
-        <hr />
-        <div className="author-container">
-          <img
-            src="./images/image-avatar.png"
-            alt="author image"
-            width="40px"
-            height="40px"
-          />
-          <div className="author-text">
-            <p>Creation of</p>
-            <p className="author">Jules Wyvern</p>
-          </div>
+      <div className="px-5">
+        <h2 className="text-xl">Equilibrium #3429</h2>
+        <p className="text-s">Sci-Fi.Action.Drama</p>
+        <div class="my-2 select-none flex">
+          <button className=" px-4 shadow-md no-underline rounded-full bg-slate-600 text-white font-sans font-semibold text-sm border-blue btn-primary hover:text-white hover:bg-blue-light focus:outline-none active:shadow-none mr-2">
+            PG-13
+          </button>
+          <button className=" px-4 shadow-md no-underline rounded-full bg-slate-600 text-white font-sans font-semibold text-sm border-orange btn-primary hover:text-white hover:bg-orange-light focus:outline-none active:shadow-none mr-2">
+            Alert
+          </button>
+          <button className=" px-4 shadow-md no-underline rounded-full bg-slate-600 text-white font-sans font-semibold text-sm border-red btn-primary hover:text-white hover:bg-red-light focus:outline-none active:shadow-none">
+            Danger
+          </button>
         </div>
       </div>
     </div>
