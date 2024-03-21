@@ -32,7 +32,7 @@ h2:hover {
   position: relative;
 }
 .card-container {
-  background-color: #15273f;
+  /* background-color: #15273f; */
   border-radius: 16px;
   box-shadow: 12px 11px 20px -4px rgba(0, 0, 0, 0.263);
   display: flex;
@@ -70,7 +70,6 @@ h2:hover {
 
 .card-container p {
   color: #6b7f9f;
-  font-size: 18px;
   font-weight: 300;
   transition: all 800ms ease-in;
   transition-delay: 25ms;
@@ -170,7 +169,8 @@ h2 {
   position: relative;
 }
 .image-container > img {
-  border-radius: 12px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
 }
 
 hr {
@@ -179,6 +179,66 @@ hr {
   border-color: #86a9d413;
 }
 
+.blob {
+  position: absolute;
+  top: 0;
+  left: 15%;
+  opacity: 0.5;
+  width: 400px;
+  aspect-ratio: 1/1;
+  animation: animate 10s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite
+    alternate forwards;
+  filter: blur(40px);
+  z-index: -1;
+  background: linear-gradient(
+    47deg,
+    rgba(255, 88, 139, 1) 21%,
+    rgb(0 164 173) 67%,
+    rgba(118, 74, 166, 1) 81%
+  );
+  
+
+  /*  Optional  */
+    box-shadow: inset 50px 50px 17px 0px #ff588b,
+    inset 100px 100px 17px 0px #66319f;
+}
+
+.blob1 {
+  position: absolute;
+  bottom: 0;
+  right: 5%;
+  opacity: 0.5;
+  width: 400px;
+  aspect-ratio: 1/1;
+  animation: animate 10s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite
+    alternate forwards;
+  filter: blur(40px);
+  z-index: -1;
+  background: linear-gradient(
+    47deg,
+    rgba(255, 88, 139, 1) 21%,
+    rgb(0 164 173) 67%,
+    rgba(118, 74, 166, 1) 81%
+  );
+}
+@keyframes animate {
+  0% {
+    translate: 40% -25%;
+    border-radius: 60% 40% 30% 70% / 100% 85% 92% 74%;
+  }
+  50% {
+    translate: 0% 13%;
+    border-radius: 20% 71% 47% 70% / 81% 15% 22% 54%;
+    rotate: 41deg;
+    scale: 1.15;
+  }
+  100% {
+    translate: -45% 39%;
+    border-radius: 100% 75% 92% 74% / 60% 80% 30% 70%;
+    rotate: -60deg;
+    scale: 1.05;
+  }
+}
 /* # Front-end Style Guide
 
 ## Layout

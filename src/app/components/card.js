@@ -1,9 +1,10 @@
 import React from "react";
 import Image from "next/image";
+import { Button } from "flowbite-react";
 
 export default function Card() {
   return (
-    <div className="card-container">
+    <div className="card-container bg-gray-900 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-20 ">
       <div className="image-container">
         <Image
           src="/images/d5NXSklXo0qyIYkgV94XAgMIckC.webp"
