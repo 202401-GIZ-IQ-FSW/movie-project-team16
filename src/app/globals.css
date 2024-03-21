@@ -15,7 +15,8 @@
 }
 
 .la {
-  background-color: #0d1a2d;
+  background-color: #8ec5fc;
+  background-image: linear-gradient(62deg, #d0fcec 0%, #95afe0 100%);
 }
 
 h2,
@@ -24,25 +25,22 @@ p {
   margin: 0px;
 }
 
-h2:hover {
-  color: #09fefb;
-  cursor: pointer;
-}
 .main-container {
   position: relative;
 }
 .card-container {
-  /* background-color: #15273f; */
-  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 1px solid #fff;
+  border-radius: 10px;
   box-shadow: 12px 11px 20px -4px rgba(0, 0, 0, 0.263);
   display: flex;
   flex-direction: column;
   row-gap: 18px;
-  width: 280px;
+  width: 260px;
   height: 460px;
-  padding: 24px;
+  padding: 12px;
   padding-bottom: 28px;
-  transition: 800ms;
+  transition: 400ms;
   transition-delay: 25ms;
   z-index: 1;
 }
@@ -63,25 +61,23 @@ h2:hover {
 }
 
 .card-container:hover {
-  background-color: #0b2446e2;
+  cursor: pointer;
+  background-color: #fff;
   transform: scale(1.01) translateY(-16px);
   box-shadow: 8px 8px 10px -4px rgba(0, 0, 0, 0.263);
 }
 
 .card-container p {
-  color: #6b7f9f;
+  color: #000;
   font-weight: 300;
   transition: all 800ms ease-in;
   transition-delay: 25ms;
 }
 
 .text-container {
-  margin-top: 80px;
+  margin-top: 84px;
 }
 
-.card-container:hover p {
-  color: hsl(217, 21%, 70%);
-}
 .main-container:hover .gradient {
   transform: scale(1.02) translateY(-16px);
   border-radius: 16px;
@@ -91,10 +87,14 @@ h2:hover {
   border-radius: 10px;
 }
 
+p {
+  font-size: 14px;
+}
+
 h2 {
   font-weight: 500;
-  font-size: 22px;
-  color: #f5feff;
+  font-size: 18px;
+  color: #000000;
 }
 
 .cool-kids {
@@ -152,11 +152,11 @@ h2 {
   align-items: center;
   top: 0;
   left: 0;
-  height: 100%;
-  width: 100%;
+  height: 351.5px;
+  width: 234px;
   justify-content: center;
-  border-radius: 12px;
-  background-color: hsla(178, 100%, 50%, 0.533);
+  border-radius: 8px;
+  background-color: hsla(253, 33%, 78%, 0.405);
   cursor: pointer;
   transition: opacity 400ms ease-in-out;
 }
@@ -169,14 +169,7 @@ h2 {
   position: relative;
 }
 .image-container > img {
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-}
-
-hr {
-  margin: 0;
-  width: 100%;
-  border-color: #86a9d413;
+  border-radius: 8px;
 }
 
 .blob {
@@ -196,10 +189,9 @@ hr {
     rgb(0 164 173) 67%,
     rgba(118, 74, 166, 1) 81%
   );
-  
 
   /*  Optional  */
-    box-shadow: inset 50px 50px 17px 0px #ff588b,
+  box-shadow: inset 50px 50px 17px 0px #ff588b,
     inset 100px 100px 17px 0px #66319f;
 }
 
