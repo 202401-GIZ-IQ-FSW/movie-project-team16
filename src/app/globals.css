@@ -15,12 +15,7 @@
 }
 
 .la {
-  position: relative;
-  font-family: "Outfit", sans-serif;
-  opacity: 0.8;
-  background-size: 20px 20px;
-  background-position: 0 0,10px 10px;
-  height: 100vh;
+  background-color: #0d1a2d;
 }
 
 h2,
@@ -43,8 +38,9 @@ h2:hover {
   display: flex;
   flex-direction: column;
   row-gap: 18px;
-  width: 290px;
-  /* padding: 24px; */
+  width: 280px;
+  height: 460px;
+  padding: 24px;
   padding-bottom: 28px;
   transition: 800ms;
   transition-delay: 25ms;
@@ -77,6 +73,10 @@ h2:hover {
   font-weight: 300;
   transition: all 800ms ease-in;
   transition-delay: 25ms;
+}
+
+.text-container {
+  margin-top: 80px;
 }
 
 .card-container:hover p {
@@ -164,8 +164,8 @@ h2 {
   opacity: 1;
 }
 .image-container {
-  height: 290px;
-  width: 290px;
+  height: 260px;
+  width: 234px;
   position: relative;
 }
 .image-container > img {

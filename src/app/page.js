@@ -6,28 +6,24 @@ import Card from "./components/card";
 export default function Home() {
   return (
     <>
-      <Nav />
-      {/* <div>test</div> */}
-      <div className=" la flex justify-start items-center flex-wrap  h-screen">
-        <div className=" mx-4 my-8">
-          <Card />
-        </div>
-        <div className=" mx-4 my-8">
-          <Card />
-        </div>
-        <div className=" mx-4 my-8">
-          <Card />
-        </div>
-        <div className=" mx-4 my-8">
-          <Card />
-        </div>
-        <div className=" mx-4 my-8">
-          <Card />
-        </div>
+    <Nav/>
+    {/* <div>test</div> */}
+    <div className=" la flex justify-center items-center flex-wrap  h-screen">
+      <div className=" mx-8">
+    <Card/>
+
       </div>
-      <Footer />
-      <div className="blob"></div>
-      <div className="blob1"></div>
+      <div className=" mx-8">
+    <Card/>
+
+      </div>
+      <div className=" mx-8">
+    <Card/>
+
+      </div>
+
+    </div>
+    <Footer/>
     </>
   );
 }
