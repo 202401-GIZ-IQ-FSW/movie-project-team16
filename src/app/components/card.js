@@ -5,38 +5,36 @@ export default function Card() {
   return (
     <div className="card-container">
       <div className="image-container">
-        {/* <Image
-          src="./images/image-equilibrium.jpg"
-          alt="cube image"
+        <Image
+          src="/images/d5NXSklXo0qyIYkgV94XAgMIckC.webp"
+          alt="movie poster"
           width="290"
           height="290"
-        /> */}
+        />
         <div className="overlay">
-          <img src="./images/icon-view.svg" alt="view" />
+          {/* <img src="./images/icon-view.svg" alt="view" /> */}
         </div>
       </div>
-      <h2 className=" text-2xl">Equilibrium #3429</h2>
-      <p>Our Equilibrium collection promotes balance and calm.</p>
-      <div className="small-container">
-        <div className="price">
-          <img src="./images/icon-ethereum.svg" />
-          <p>0.041 ETH</p>
-        </div>
-        <div className="expiry">
-          <img src="./images/icon-clock.svg" />
-          <p>3 days left</p>
-        </div>
-        <hr />
-        <div className="author-container">
-          <img
-            src="./images/image-avatar.png"
-            alt="author image"
-            width="40px"
-            height="40px"
-          />
-          <div className="author-text">
-            <p>Creation of</p>
-            <p className="author">Jules Wyvern</p>
+      <div className="text-container">
+        <h2 className=" text-2xl">Movie Title</h2>
+        <div className="small-container flex justify-between">
+          <div className="flex items-center justify-between gap-2">
+            <Image
+              src="./icons/clock-regular.svg"
+              alt="clock"
+              width="20"
+              height="20"
+            />
+            <p>2hr 45min</p>
+          </div>
+          <div className="flex items-center justify-between gap-2">
+            <Image
+              src="./icons/star-regular.svg"
+              alt="star"
+              width="20"
+              height="20"
+            />
+            <p>4.5</p>
           </div>
         </div>
       </div>
