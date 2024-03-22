@@ -33,12 +33,15 @@ const aeonikFono = localFont({
   ],
 });
 
-export default function Card() {
+const IMAGE_BASE_URL="https://image.tmdb.org/t/p/original";
+
+export default function Card({movie}) {
+  console.log(movie)
   return (
     <div className="card-container ">
       <div className="image-container">
         <Image
-          src="/images/d5NXSklXo0qyIYkgV94XAgMIckC.webp"
+          src={IMAGE_BASE_URL+movie.poster_path} 
           alt="movie poster"
           width="290"
           height="290"
@@ -49,7 +52,7 @@ export default function Card() {
       </div>
       <div className="text-container flex flex-col gap-1">
         <div>
-          <h2 className={aeonikFono.className}>Movie Title</h2>
+          <h2 className={aeonikFono.className}>{movie.original_title? movie.original_title : movie.original_name}</h2>
         </div>
         <div>
           <div className="small-container flex gap-3">
