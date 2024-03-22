@@ -1,11 +1,45 @@
 "use client";
-
-import Link from "next/link";
-import React from "react";
+import React, {useState,  useRef, useEffect} from "react";
 import { Navbar } from "flowbite-react";
 import { Dropdown } from "flowbite-react";
 
+
 export default function Nav() {
+  const [hidden, setHidden] = useState(true);
+  const [genreHidden, setGenreHidden] = useState(true);
+  const [hideNavbar, setHideNabar] = useState(true)
+  const wrapperRef  = useRef(null);
+
+  const toggleDropdown = (event) => {
+    const toggleId = event.target.getAttribute('data-dropdown-toggle');
+    const dropdownElement = document.getElementById(toggleId);
+    if (dropdownElement ) {
+      if(toggleId === "dropdownNavbar"){
+        setHidden(!hidden);
+        setGenreHidden(true);
+        }else{
+          setGenreHidden(!genreHidden);
+          setHidden(true);
+
+        }
+      dropdownElement.classList.toggle('hidden');
+    }
+  };
+  const handleClickOutside = (event) => {
+    if (wrapperRef .current && !wrapperRef .current.contains(event.target)) {
+        setHidden(true)
+        setGenreHidden(true)
+        setHideNabar(true)
+    }
+};
+
+useEffect(() => {
+  document.addEventListener("click", handleClickOutside);
+  return () => {
+    document.removeEventListener("click", handleClickOutside);
+  };
+});
+
   return (
     <nav className="bg-black border-gray-200 dark:bg-gray-900">
       <div className=" flex flex-wrap items-center justify-between mx-auto p-4 px-12">
@@ -72,6 +106,8 @@ export default function Nav() {
           <button
             data-collapse-toggle="navbar-search"
             type="button"
+            onClick={()=> setHideNabar(!hideNavbar)}
+            ref={wrapperRef}
             className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
             aria-controls="navbar-search"
             aria-expanded="false"
@@ -95,7 +131,7 @@ export default function Nav() {
           </button>
         </div>
         <div
-          className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+          className={`${hideNavbar ? "hidden" : ""} items-center justify-between w-full md:flex md:w-auto md:order-1`}
           id="navbar-search"
         >
           <div className="relative mt-3 md:hidden">
@@ -138,6 +174,8 @@ export default function Nav() {
               <button
                 id="dropdownNavbarLink"
                 data-dropdown-toggle="dropdownNavbar"
+                onClick={toggleDropdown}
+                ref={wrapperRef}
                 className="font-heading font-[300] flex items-center justify-between w-full py-2 px-3 text-gray-300 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#DCF34E] md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
               >
                 Movies{" "}
@@ -160,7 +198,7 @@ export default function Nav() {
               {/* <!-- Dropdown menu --> */}
               <div
                 id="dropdownNavbar"
-                className="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
+                className={`z-10 ${hidden ? 'hidden' : 'opacity-100'} absolute font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600`}
               >
                 <ul
                   className="py-2 text-sm text-gray-700 dark:text-gray-400"
@@ -204,7 +242,9 @@ export default function Nav() {
             <li>
               <button
                 id="dropdownNavbarLink"
-                data-dropdown-toggle="dropdownNavbar"
+                data-dropdown-toggle="genreDropDownLink"
+                onClick={toggleDropdown}
+                ref={wrapperRef}
                 className="font-heading font-[300] flex items-center justify-between w-full py-2 px-3 text-gray-300 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#DCF34E] md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
               >
                 Genre{" "}
@@ -226,8 +266,8 @@ export default function Nav() {
               </button>
               {/* <!-- Dropdown menu --> */}
               <div
-                id="dropdownNavbar"
-                className="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
+                id="genreDropDownLink"
+                className={`z-10 ${genreHidden ? 'hidden opacity-0' : 'opacity-100'}  absolute font-normal bg-white divide-y w-f divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600  transition-all ease-in-out `}
               >
                 <ul
                   className="py-2 text-sm text-gray-700 dark:text-gray-400"
