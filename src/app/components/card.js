@@ -3,13 +3,10 @@ import Image from "next/image";
 import { Button } from "flowbite-react";
 import localFont from "next/font/local";
 
-export default function Card() {
-
-
 const IMAGE_BASE_URL="https://image.tmdb.org/t/p/original";
 
 export default function Card({movie}) {
-
+  console.log(movie)
   return (
     <div className="card-container ">
       <div className="image-container">
@@ -45,7 +42,7 @@ export default function Card({movie}) {
                 width="14"
                 height="14"
               />
-              <p>4.5</p>
+              <p>{movie.vote_average}</p>
             </div>
           </div>
         </div>
