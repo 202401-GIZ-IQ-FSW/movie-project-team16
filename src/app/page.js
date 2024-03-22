@@ -6,26 +6,22 @@ import Card from "./components/card";
 export default function Home() {
   return (
     <>
-      <Nav />
       {/* <div>test</div> */}
-      <div className=" la flex justify-center items-center flex-wrap  h-screen">
-        <div className=" mx-2">
+
+      <div className=" la flex flex-col">
+        <h1 className="pl-20 pt-12 font-body text-[96px]">Latest Movies</h1>
+        <div className="flex justify-center items-center flex-wrap pb-24 pt-12 gap-4 ">
           <Card />
-        </div>
-        <div className=" mx-2">
+
           <Card />
-        </div>
-        <div className=" mx-2">
+
           <Card />
-        </div>
-        <div className=" mx-2">
+
           <Card />
-        </div>
-        <div className=" mx-2">
+
           <Card />
         </div>
       </div>
-      <Footer />
     </>
   );
 }
