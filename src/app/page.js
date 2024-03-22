@@ -26,27 +26,36 @@ export default function Home() {
   };
   return (
     <>
-
-      <Nav />
+   
       {/* <div>test</div> */}
-      <div className=" la flex justify-center items-center flex-wrap  h-screen">
-        <div className=" mx-2">
-          <Card />
+      <div className="relative">
+        <IoChevronBackOutline
+          onClick={() => slideLeft(elementRef.current)}
+          className="text-[50px] text-white
+           p-2 z-10 cursor-pointer 
+            hidden md:block absolute top-1/2"
+        />
+        <div
+         ref={elementRef}
+          className=" la flex overflow-x-auto gap-8
+         scrollbar-none scroll-smooth pt-4 px-3 pb-4"
+        >
+          {movieList.map((movie) => (
+            <div>
+              <Card movie={movie}/>
+            </div>
+          ))}
         </div>
-        <div className=" mx-2">
-          <Card />
-        </div>
-        <div className=" mx-2">
-          <Card />
-        </div>
-        <div className=" mx-2">
-          <Card />
-        </div>
-        <div className=" mx-2">
-          <Card />
-        </div>
+        <IoChevronForwardOutline
+          onClick={() => slideRight(elementRef.current)}
+          className="text-[50px] text-white hidden md:block
+           p-2 cursor-pointer z-10 
+            absolute right-0 top-1/2"
+        />
       </div>
-      <Footer />
+      {/* <PopularMovieList/> */}
+      <div className="blob"></div>
+      <div className="blob1"></div>
     </>
   );
 }
