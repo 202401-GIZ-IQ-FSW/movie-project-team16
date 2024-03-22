@@ -4,11 +4,17 @@ import { Button } from "flowbite-react";
 import localFont from "next/font/local";
 
 export default function Card() {
+
+
+const IMAGE_BASE_URL="https://image.tmdb.org/t/p/original";
+
+export default function Card({movie}) {
+
   return (
     <div className="card-container ">
       <div className="image-container">
         <Image
-          src="/images/d5NXSklXo0qyIYkgV94XAgMIckC.webp"
+          src={IMAGE_BASE_URL+movie.poster_path} 
           alt="movie poster"
           width="290"
           height="290"
@@ -19,7 +25,7 @@ export default function Card() {
       </div>
       <div className="text-container flex flex-col gap-2">
         <div>
-          <h2 className="font-heading">Movie Title</h2>
+          <h2 className="font-heading">{movie.original_title? movie.original_title : movie.original_name}</h2>
         </div>
         <div className="flex items-center">
           <div className="flex gap-3">
