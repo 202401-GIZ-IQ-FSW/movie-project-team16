@@ -28,6 +28,8 @@ export default function Home() {
     <>
    
       {/* <div>test</div> */}
+      <div className="la">
+      <h1 className="pl-20 pt-12 font-body text-[96px]">Latest Movies</h1>
       <div className="relative">
         <IoChevronBackOutline
           onClick={() => slideLeft(elementRef.current)}
@@ -37,8 +39,8 @@ export default function Home() {
         />
         <div
          ref={elementRef}
-          className=" la flex overflow-x-auto gap-8
-         scrollbar-none scroll-smooth pt-4 px-3 pb-4"
+          className=" la flex overflow-x-auto gap-4
+         scrollbar-none scroll-smooth pt-4 px-20 pb-4"
         >
           {movieList.map((movie) => (
             <div>
@@ -53,9 +55,7 @@ export default function Home() {
             absolute right-0 top-1/2"
         />
       </div>
-      {/* <PopularMovieList/> */}
-      <div className="blob"></div>
-      <div className="blob1"></div>
+      </div>
     </>
   );
 }
