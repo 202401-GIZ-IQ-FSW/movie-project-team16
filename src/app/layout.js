@@ -1,5 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import Nav from "./components/navbar";
+import Footer from "./components/footer"; 
 
 const aeonikPro = localFont({
   src: [
@@ -43,7 +45,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={aeonikPro.className}>{children}</body>
+      <body className={aeonikPro.className}>
+        <Nav />
+        {children}
+        <Footer/>
+        </body>
+     
     </html>
   );
 }
