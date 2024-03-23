@@ -137,14 +137,6 @@ h2 {
   border-radius: 8px;
 }
 
-
-
-.main-p{
-  width: 100%;
-  height: 100%;
-  background-color: rgb(61, 61, 61);
-}
-
 #hero_main{
   position: relative;
   width: 100%;
@@ -157,7 +149,7 @@ h2 {
   position: absolute;
   top: 0%;
   width: 100%;
-  height: 50%;
+  height: 50vh;
   background-color: rgb(255, 255, 255);
   z-index: 9;
   overflow: hidden;
@@ -166,7 +158,7 @@ h2 {
 #hero_center{
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   transform-origin: center;
   background-color: rgb(0, 0, 0);
   transition: all cubic-bezier(0.19, 1, 0.22, 1)1s;
@@ -177,7 +169,7 @@ h2 {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 50%;
+  height: 50vh;
   background-color: rgb(255, 255, 255);
   overflow: hidden;
 }
@@ -186,13 +178,15 @@ h2 {
   font-family: var(--font-aeonik-fono), sans-serif;
   font-size: 22vw;
   position: absolute;
-  top: 36.945%;
+  top: 50%;
   left: 50%;
+  height: fit-content;
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
 
 #hero_top-h1{
-  bottom: 50%;
+  top: 100%!important;
 }
 
 #hero_bottom-h1{
@@ -200,13 +194,13 @@ h2 {
 }
 
 .hero_content{
-  margin-top: 100%;
+  margin-top: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   color: #fff;
   gap: 4vh;
 }
