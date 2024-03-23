@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Card from "./components/card";
 import GlobalApi from "./services/globalApi";
 import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
+import Hero from "./components/hero";
 
 export default function Home() {
   const [movieList, setMovieList] = useState([]);
@@ -26,6 +27,8 @@ export default function Home() {
   };
   return (
     <>
+
+      <Hero/>
    
       {/* <div>test</div> */}
       <div className="la">
@@ -44,7 +47,7 @@ export default function Home() {
         >
           {movieList.map((movie) => (
             <div>
-              <Card movie={movie}/>
+              <Card key={movie.id} movie={movie}/>
             </div>
           ))}
         </div>
