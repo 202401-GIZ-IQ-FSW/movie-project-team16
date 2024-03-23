@@ -1,18 +1,54 @@
-import React from "react";
+"use client";
+import React, {useState, useEffect, useRef} from "react";
 import Image from "next/image";
 import localFont from "next/font/local";
 import { Button } from "flowbite-react";
+import GlobalApi from "../services/globalApi"
+import ActorCard from "../components/actorCard";
+import HomeSlider from "../components/home-slider";
+import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
 
-function SingleMovie(movie) {
+
+const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/original";
+function getDuration(durationInMinutes) {
+  var hours = Math.floor(durationInMinutes / 60);
+  var minutes = durationInMinutes % 60;
+  
+  return hours + "h " + minutes + "m";
+}
+function SingleMovie() {  
+  const elementRef = useRef(null);
+  const [movie, setMovie] = useState([]);
+  const [credits, setCredits] = useState([]);
+  const [recommendations, setRecommendations] = useState([])
+
+
+  useEffect(() => {
+    getMovie();
+  }, []);
+
+  const getMovie = () => {
+    GlobalApi.getSingleMovie.then(resp=>{
+      setMovie(resp.data)
+  })
+  GlobalApi.getMovieCredits.then(resp=>{
+    setCredits(resp.data.cast)
+})
+
+GlobalApi.getMovieRecommendations.then(resp=>{
+  setRecommendations(resp.data.results)
+})
+  };
   return (
+    <>
     <div className="relative">
       <div className="gradient-overlay flex absolute  w-full h-full opacity-70">
-        {" "}
+        {""}
       </div>
 
       <div className="background-image flex absolute inset-0">
         <Image
-          src="/images/bradpitt.jpg"
+          src={IMAGE_BASE_URL + movie.backdrop_path}
           alt="movie background"
           layout="fill"
           objectFit="cover"
@@ -23,7 +59,7 @@ function SingleMovie(movie) {
           <div className="movie-image  z-3">
             <Image
               className="rounded-lg flex"
-              src="/images/d5NXSklXo0qyIYkgV94XAgMIckC.webp"
+              src={IMAGE_BASE_URL + movie.poster_path}
               alt="movie poster"
               width="320"
               height="320"
@@ -31,7 +67,7 @@ function SingleMovie(movie) {
           </div>
           <div className="flex flex-col gap-4">
             <h1 className="movie-title font-medium font-heading text-white text-3xl md:text-5xl">
-              Dune
+              {movie.original_title? movie.original_title : movie.original_name}
             </h1>
 
             <div className="flex flex-col">
@@ -43,9 +79,9 @@ function SingleMovie(movie) {
                   width="32"
                   height="32"
                 />
-                <p className="text-white text-[32px]">4.5</p>
+                <p className="text-white text-[32px]">{movie.vote_average}</p>
               </div>
-              <p className="text-sm text-gray-400">2,293,312 ratings</p>
+              <p className="text-sm text-gray-400"> {movie.vote_count} ratings</p>
             </div>
 
             <div className="toasts flex flex-col md:flex-row gap-4">
@@ -57,7 +93,7 @@ function SingleMovie(movie) {
                   height="14"
                 />
                 <p className="release-date font-heading text-sm font-light">
-                  22.03.2024
+                  {movie.release_date}
                 </p>
               </div>
               <div className="flex items-center gap-2 bg-[#d0ec2f] px-2 py-1  w-fit md:px-4 md:py-2 rounded-md">
@@ -68,7 +104,7 @@ function SingleMovie(movie) {
                   height="14"
                 />
                 <p className="release-date font-heading text-sm font-light">
-                  2hr 45min
+                  {getDuration(movie.runtime)}
                 </p>
               </div>
             </div>
@@ -80,21 +116,21 @@ function SingleMovie(movie) {
                 height="14"
               />
               <p className="release-date font-heading text-sm font-light">
-                English, German, French, Arabic
+                {movie.original_language}
               </p>
             </div>
             <p className="movie-description text-white font-body font-light text-sm md:text-md max-w-md">
-              lorem impsum lorem impsum lorem impsum lorem impsum lorem impsum
-              lorem impsum lorem impsum lorem impsum lorem impsum lorem impsum
-              lorem impsum lorem impsum lorem impsum lorem impsum
+              {movie.overview}
             </p>
             <p className="director-name text-gray-300 font-heading font-light text-sm md:text-md max-w-md">
               Director: Christopher Nolan
             </p>
             <div className="production-company items-center flex-col gap-12 mt-2">
-              {" "}
-              <div className="flex items-center mb-4 gap-6">
-                <Image
+              {/* {movie.production_companies[0]} */}
+              {movie.production_companies?.map((production)=>{
+                <div className="flex items-center mb-4 gap-6">
+                    <Image
+                    key={production.id}
                   // className="rounded-md"
                   src="/images/20th-Century-Studios.png"
                   alt="calendar"
@@ -104,7 +140,9 @@ function SingleMovie(movie) {
                 <p className="producer-name text-gray-300 font-heading font-light text-sm md:text-md max-w-md">
                   Paramount Pictures
                 </p>
+                
               </div>
+              })}
               <Button className="trailer-button flex w-[200px]">
                 Watch Trailer
               </Button>
@@ -112,6 +150,8 @@ function SingleMovie(movie) {
           </div>
         </div>
       </div>
+
+      
 
       {/* <div className="flex w-[1300px] mx-24">
         <Image
@@ -123,6 +163,37 @@ function SingleMovie(movie) {
         />
       </div> */}
     </div>
+    <div className="gradient-blue pb-20">
+    <h1 className="pl-20 pt-12 font-body text-[96px] ">Credits</h1>
+      <div className="relative">
+        <IoChevronBackOutline
+          onClick={() => slideLeft(elementRef.current)}
+          className="text-[50px] text-white
+           p-2 z-10 cursor-pointer 
+            hidden md:block absolute top-1/2"
+        />
+        <div
+         ref={elementRef}
+          className=" la flex overflow-x-auto gap-4
+         scrollbar-none scroll-smooth pt-4 px-20 pb-4"
+        >
+          {credits.map((actor) => (
+            <div>
+              <ActorCard key={actor.id} actor={actor}/>
+            </div>
+          ))}
+        </div>
+        <IoChevronForwardOutline
+          onClick={() => slideRight(elementRef.current)}
+          className="text-[50px] text-white hidden md:block
+           p-2 cursor-pointer z-10 
+            absolute right-0 top-1/2"
+        />
+      </div>
+
+      <HomeSlider title="Watch next" movieList={recommendations} background="" textBackground=""/>
+      </div>
+    </>
   );
 }
 

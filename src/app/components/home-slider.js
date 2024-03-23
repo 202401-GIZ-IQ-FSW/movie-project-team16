@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
 import Card from "./card";
 
-export default function HomeSlider({movieList, title, background}) {
+export default function HomeSlider({movieList, title, background, textBackground}) {
   const elementRef = useRef(null);
     
 
@@ -14,7 +14,7 @@ export default function HomeSlider({movieList, title, background}) {
   };
   return (
     <div className={background}>
-      <h1 className="pl-20 pt-12 font-body text-[96px]">{title}</h1>
+      <h1 className={`pl-20 pt-12 font-body text-[96px] ${textBackground}`}>{title}</h1>
       <div className="relative">
         <IoChevronBackOutline
           onClick={() => slideLeft(elementRef.current)}
