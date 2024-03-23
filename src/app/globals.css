@@ -85,27 +85,29 @@ h2 {
   color: #000000;
 }
 
-.cool-kids {
-  display: flex;
-  justify-content: space-between;
+.trailer-button {
+  transition: linear 200ms;
+  color: black;
+  background-color: #74ebd5;
+  background-image: linear-gradient(90deg, #94dce7 0%, #fbdae0 50%);
 }
 
-.price {
-  display: flex;
-  align-items: center;
-  color: #09fefb;
-  display: flex;
-  column-gap: 8px;
-  font-weight: 500;
+.trailer-button :hover {
+  justify-content: center;
+  text-align: center;
+  width: 420px;
+  color: white;
+  background-image: linear-gradient(90deg, #04c4b8 0%, #a6a0c0 50%);
 }
 
-.expiry-date {
-  display: flex;
-  align-items: center;
-  color: #89acd5;
-  display: flex;
-  column-gap: 8px;
-  font-weight: 500;
+.gradient-overlay {
+  z-index: -1;
+  background-color: #8c8c8c;
+  background-image: linear-gradient(62deg, #000000 50%, #95fffb22 100%);
+}
+
+.background-image {
+  z-index: -2;
 }
 
 .overlay {
