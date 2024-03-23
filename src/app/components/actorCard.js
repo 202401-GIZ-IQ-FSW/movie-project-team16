@@ -3,15 +3,13 @@ import Image from "next/image";
 
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/original";
 
-
-export default function Card({ movie }) {
-  console.log(movie.runtime)
+export default function ActorCard({ actor }) {
   return (
     <div className="card-container ">
       <div className="image-container">
         <Image
-          src={IMAGE_BASE_URL + movie.poster_path}
-          alt="movie poster"
+          src={IMAGE_BASE_URL + actor.profile_path}
+          alt="actor poster"
           width="290"
           height="290"
         />
@@ -22,26 +20,14 @@ export default function Card({ movie }) {
       <div className="text-container flex flex-col gap-2">
         <div>
           <h2 className="font-heading whitespace-nowrap">
-            {movie.original_title
-              ? movie.original_title.length > 15
-                ? movie.original_title.slice(0, 15) + "..."
-                : movie.original_title
-              : movie.original_name > 15
-              ? movie.original_name.slice(0, 15)
-              : movie.original_name}
+            { actor.name.length > 15
+                ? actor.name.slice(0, 15) + "..."
+                : actor.name
+                }
           </h2>
         </div>
         <div className="flex items-center">
           <div className="flex gap-3">
-            <div className="flex items-center justify-between gap-2 bg-[#c4f34e] py-[4px] px-[8px] rounded-md">
-              <Image
-                src="./icons/calendar-regular.svg"
-                alt="calendar"
-                width="14"
-                height="14"
-              />
-              <p>{movie.release_date}</p>
-            </div>
             <div className="flex items-center justify-between gap-2  bg-[#c2c1e6] py-[4px] px-[8px]  rounded-md">
               <Image
                 src="./icons/star-regular.svg"
@@ -49,7 +35,7 @@ export default function Card({ movie }) {
                 width="14"
                 height="14"
               />
-              <p>{movie.vote_average}</p>
+              <p>{actor.character}</p>
             </div>
           </div>
         </div>

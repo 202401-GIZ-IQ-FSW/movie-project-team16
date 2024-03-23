@@ -11,7 +11,14 @@ const getTrendingVideos=axios.get(movieBaseUrl+
     const getMovieByGenreId=(id)=>
     axios.get(movieByGenreBaseURL+"&with_genres="+id)
 
+const getSingleMovie = axios.get(movieBaseUrl + "/movie/550?api_key="+api_key);
+const getMovieCredits = axios.get(movieBaseUrl + "/movie/550/credits?api_key=" + api_key);
+const getMovieRecommendations = axios.get(movieBaseUrl + "/movie/550/recommendations?api_key=" + api_key)
+
 export default{
     getTrendingVideos,
-    getMovieByGenreId
+    getMovieByGenreId,
+    getSingleMovie,
+    getMovieCredits,
+    getMovieRecommendations
 }
