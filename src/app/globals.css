@@ -2,11 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-.la {
+.gradient-blue{
   background-color: #8ec5fc;
   background-image: linear-gradient(62deg, #d0fcec 0%, #95afe0 100%);
 }
-
 h2,
 p {
   transition: 400ms;
