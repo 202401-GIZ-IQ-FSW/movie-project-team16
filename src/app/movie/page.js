@@ -40,6 +40,7 @@ GlobalApi.getMovieRecommendations.then(resp=>{
 })
   };
   return (
+    <>
     <div className="relative">
       <div className="gradient-overlay flex absolute  w-full h-full opacity-70">
         {""}
@@ -150,7 +151,20 @@ GlobalApi.getMovieRecommendations.then(resp=>{
         </div>
       </div>
 
-      <h1 className="pl-20 pt-12 font-body text-[96px] text-white">Credits</h1>
+      
+
+      {/* <div className="flex w-[1300px] mx-24">
+        <Image
+          className="rounded-lg"
+          src="/images/2.webp"
+          alt="calendar"
+          width="1300"
+          height="1300"
+        />
+      </div> */}
+    </div>
+    <div className="gradient-blue pb-20">
+    <h1 className="pl-20 pt-12 font-body text-[96px] ">Credits</h1>
       <div className="relative">
         <IoChevronBackOutline
           onClick={() => slideLeft(elementRef.current)}
@@ -177,18 +191,9 @@ GlobalApi.getMovieRecommendations.then(resp=>{
         />
       </div>
 
-      <HomeSlider title="Watch next" movieList={recommendations} background="" textBackground="text-white"/>
-
-      {/* <div className="flex w-[1300px] mx-24">
-        <Image
-          className="rounded-lg"
-          src="/images/2.webp"
-          alt="calendar"
-          width="1300"
-          height="1300"
-        />
-      </div> */}
-    </div>
+      <HomeSlider title="Watch next" movieList={recommendations} background="" textBackground=""/>
+      </div>
+    </>
   );
 }
 
