@@ -203,37 +203,37 @@ useEffect(() => {
                   aria-labelledby="dropdownLargeButton"
                 >
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      href="/movies/top_rated"
                       className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                     >
-                      Dashboard
-                    </a>
+                      Top Rated
+                    </Link>
                   </li>
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      href="/movies/popular"
                       className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                     >
-                      Settings
-                    </a>
+                      Popular
+                    </Link>
                   </li>
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      href="/movies/now_playing"
                       className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                     >
-                      Earnings
-                    </a>
+                      Now Playing
+                    </Link>
                   </li>
                 </ul>
                 <div className="py-1">
-                  <a
-                    href="#"
+                  <Link
+                    href="/movies/upcoming"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                   >
-                    Sign out
-                  </a>
+                     Upcoming
+                  </Link>
                 </div>
               </div>
             </li>
