@@ -1,12 +1,13 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/original";
 
 
-export default function Card({ movie }) {
-  console.log(movie.runtime)
+export default function({ movie }) {
   return (
+    <Link href={`/movie/${movie.id}`} >
     <div className="card-container ">
       <div className="image-container">
         <Image
@@ -57,5 +58,6 @@ export default function Card({ movie }) {
         </div>
       </div>
     </div>
+    </Link>
   );
 }

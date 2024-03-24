@@ -3,9 +3,9 @@ import React, {useState, useEffect, useRef} from "react";
 import Image from "next/image";
 import localFont from "next/font/local";
 import { Button } from "flowbite-react";
-import GlobalApi from "../services/globalApi"
-import ActorCard from "../components/actorCard";
-import HomeSlider from "../components/home-slider";
+import GlobalApi from "../../services/globalApi"
+import ActorCard from "../../components/actorCard";
+import HomeSlider from "../../components/home-slider";
 import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
 
 
@@ -16,7 +16,7 @@ function getDuration(durationInMinutes) {
   
   return hours + "h " + minutes + "m";
 }
-function SingleMovie() {  
+function SingleMovie({params}) {  
   const elementRef = useRef(null);
   const [movie, setMovie] = useState([]);
   const [credits, setCredits] = useState([]);
@@ -28,14 +28,14 @@ function SingleMovie() {
   }, []);
 
   const getMovie = () => {
-    GlobalApi.getSingleMovie.then(resp=>{
+    GlobalApi.getSingleMovie(params.id).then(resp=>{
       setMovie(resp.data)
   })
-  GlobalApi.getMovieCredits.then(resp=>{
+  GlobalApi.getMovieCredits(params.id).then(resp=>{
     setCredits(resp.data.cast)
 })
 
-GlobalApi.getMovieRecommendations.then(resp=>{
+GlobalApi.getMovieRecommendations(params.id).then(resp=>{
   setRecommendations(resp.data.results)
 })
   };

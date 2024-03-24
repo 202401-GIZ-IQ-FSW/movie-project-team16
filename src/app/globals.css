@@ -38,16 +38,22 @@ p {
   border-radius: 10px;
   box-shadow: 4px 4px 20px -4px rgba(21, 37, 65, 0.2);
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   row-gap: 18px;
   width: 260px;
-  height: 430px;
+  height: 450px;
   padding: 12px;
   transition: 800ms;
   transition-delay: 25ms;
   z-index: 1;
 }
-
+.hidden-content{
+  width: 260px;
+  left: 0;
+  transition: visibility 300ms ease, left 800ms ease;
+  z-index: -1;
+  visibility: hidden;
+}
 .actor-card-container:hover {
   width: 540px;
   cursor: pointer;
@@ -55,6 +61,10 @@ p {
   background-image: linear-gradient(90deg, #afb5eb 0%, #daecfb 50%);
   transform: scale(1.01);
   box-shadow: 8px 8px 40px -4px rgba(21, 37, 65, 0.3);
+}
+.actor-card-container:hover .hidden-content{
+  visibility: visible;
+  left: 50%;
 }
 
 .gradient {
@@ -74,7 +84,6 @@ p {
 }
 
 .card-container:hover {
-  cursor: pointer;
   background-color: #fff;
   transform: scale(1.01) translateY(-16px);
   box-shadow: 8px 8px 40px -4px rgba(21, 37, 65, 0.3);
@@ -148,7 +157,6 @@ h2 {
   justify-content: center;
   border-radius: 8px;
   background-color: hsla(253, 33%, 78%, 0.405);
-  cursor: pointer;
   transition: opacity 400ms ease-in-out;
 }
 .image-container:hover .overlay {

@@ -1,10 +1,22 @@
-import React from "react";
-import Image from "next/image";
-import localFont from "next/font/local";
-import { Button } from "flowbite-react";
-import ActorCard from "../components/actor-card";
-
+"use client";
+import React, {useEffect, useState} from "react";
+import GlobalApi from "../services/globalApi";
+import ActorCard from "../components/cards/actor-card";
+import Link from "next/link";
 function Actors() {
+
+  const [actors, setActors] = useState([]);
+ 
+  useEffect(() => {
+    getPopMovies();
+  }, []);
+
+  const getPopMovies = () => {
+    GlobalApi.getActors.then(resp=>{
+      setActors(resp.data.results)
+      console.log(resp.data.results)
+  })
+  };
   return (
     <div className="bg-black">
       <div className="actor-hero  flex items-center h-[500px] p-12">
@@ -17,23 +29,15 @@ function Actors() {
           behind our adored characters!
         </h1>
       </div>{" "}
-      <div className="flex w-screen h-fit flex-wrap p-10 pb-20 gap-6">
-        {" "}
-        <ActorCard></ActorCard>
-        <ActorCard></ActorCard>
-        <ActorCard></ActorCard>
-        <ActorCard></ActorCard>
-        <ActorCard></ActorCard>
-        <ActorCard></ActorCard>
-        <ActorCard></ActorCard>
-        <ActorCard></ActorCard>
-        <ActorCard></ActorCard>
-        <ActorCard></ActorCard>
-        <ActorCard></ActorCard>
-        <ActorCard></ActorCard>
-        <ActorCard></ActorCard>
-        <ActorCard></ActorCard>
-        <ActorCard></ActorCard>
+      <div className="flex w-screen h-fit flex-wrap p-10 pb-20 gap-6">{" "}
+        {
+          actors.map((actor)=>(
+           
+             <ActorCard actor={actor} key={actor.id}/>
+
+          ))
+        }
+       
       </div>{" "}
     </div>
   );
