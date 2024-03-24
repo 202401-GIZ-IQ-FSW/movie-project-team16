@@ -51,6 +51,8 @@ export default function Card({ movie }) {
               />
               <p>{movie.vote_average}</p>
             </div>
+
+         
           </div>
         </div>
       </div>
