@@ -4,7 +4,7 @@ import Image from "next/image";
 import localFont from "next/font/local";
 import { Button } from "flowbite-react";
 import GlobalApi from "../../services/globalApi"
-import ActorCard from "../../components/actorCard";
+import ActorCard from "../../components/cards/movie-actors-card";
 import HomeSlider from "../../components/home-slider";
 import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
 
