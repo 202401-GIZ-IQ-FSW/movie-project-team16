@@ -3,19 +3,19 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import localFont from "next/font/local";
 import { Button } from "flowbite-react";
-import GlobalApi from "../services/globalApi"
+import GlobalApi from "../../services/globalApi"
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/original";
 
 
-function SingleMovie() {
+function SingleMovie({params}) {
+
   const [actor, setActor] = useState([])
   useEffect(() => {
     getActor();
   }, []);
 
   const getActor = ()=>{
-    GlobalApi.getActor.then(res =>{
-      console.log(res.data)
+    GlobalApi.getActor(params.id).then(res =>{
        setActor(res.data)
       })
   } 

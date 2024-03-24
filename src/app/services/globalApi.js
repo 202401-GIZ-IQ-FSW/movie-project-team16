@@ -12,11 +12,12 @@ const getTrendingVideos=axios.get(movieBaseUrl+
     const getMovieByGenreId=(id)=>
     axios.get(movieByGenreBaseURL+"&with_genres="+id)
 
-const getSingleMovie = axios.get(movieBaseUrl + "/movie/550?api_key="+api_key);
-const getMovieCredits = axios.get(movieBaseUrl + "/movie/550/credits?api_key=" + api_key);
-const getMovieRecommendations = axios.get(movieBaseUrl + "/movie/550/recommendations?api_key=" + api_key)
+const getSingleMovie = (id) =>axios.get(`${movieBaseUrl}/movie/${id}?api_key=${api_key}`);
+const getMovieCredits = (id) =>axios.get(`${movieBaseUrl}/movie/${id}/credits?api_key=${api_key}`);
+const getMovieRecommendations = (id) =>axios.get(`${movieBaseUrl}/movie/${id}/recommendations?api_key=${api_key}`)
 
-const getActor = axios.get(actorBaseUrl  + "/person/287?api_key=" + api_key)
+const getActor = (id)=> axios.get(`${actorBaseUrl}/person/${id}?api_key=${api_key}`)
+
 
 export default{
     getTrendingVideos,

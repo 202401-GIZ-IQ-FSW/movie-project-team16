@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
 import Card from "./card";
+import Link from "next/link";
 
 export default function HomeSlider({movieList, title, background, textBackground}) {
   const elementRef = useRef(null);
@@ -28,9 +29,8 @@ export default function HomeSlider({movieList, title, background, textBackground
          scrollbar-none scroll-smooth pt-4 px-20 pb-4"
         >
           {movieList.map((movie) => (
-            <div>
+           
               <Card key={movie.id} movie={movie}/>
-            </div>
           ))}
         </div>
         <IoChevronForwardOutline

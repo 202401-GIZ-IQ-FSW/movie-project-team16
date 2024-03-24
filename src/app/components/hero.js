@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 export default function Hero() {
     const [background, setBackground] = useState(20)
+    
 
     const center = useRef(null);
     const main = useRef(null);
@@ -54,8 +55,10 @@ export default function Hero() {
         });
         return () => ctx.revert();
     }, []);
+ 
   return (
-    <div ref={main} id="hero_main">
+    <div>
+        <div ref={main} id="hero_main">
         <div ref={top} id="hero_top">
             <h1 ref={top_h1} id="hero_top-h1">Notflix</h1>
         </div>
@@ -74,6 +77,8 @@ export default function Hero() {
         </div>
     </div>
 
+    </div>
+    
 
   )
 }

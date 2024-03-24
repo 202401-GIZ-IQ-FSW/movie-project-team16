@@ -1,8 +1,6 @@
 "use client";
 import React, {useState,  useRef, useEffect} from "react";
-import { Navbar } from "flowbite-react";
-import { Dropdown } from "flowbite-react";
-
+import Link from "next/link";
 
 export default function Nav() {
   const [hidden, setHidden] = useState(true);
@@ -43,15 +41,15 @@ useEffect(() => {
   return (
     <nav className="bg-black border-gray-200 dark:bg-gray-900">
       <div className=" flex flex-wrap items-center justify-between mx-auto p-4 px-12">
-        <a
-          href="https://flowbite.com/"
+        <Link
+          href="/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
           <img src="./images/N.png" alt="logo" width="32px" />
           <span className="font-heading font-[300] self-center text-3xl whitespace-nowrap text-white">
             Notflix
           </span>
-        </a>
+        </Link>
         <div className="flex md:order-1">
           <button
             type="button"
@@ -161,13 +159,13 @@ useEffect(() => {
           </div>
           <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             <li>
-              <a
-                href="#"
+              <Link
+                href="/"
                 className="font-heading font-[300] block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent  md:text-white md:hover:text-[#DCF34E] md:p-0 md:dark:text-white"
                 aria-current="page"
               >
                 Home
-              </a>
+              </Link>
             </li>
 
             <li>
@@ -309,12 +307,12 @@ useEffect(() => {
               </div>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="font-heading font-[300] block py-2 px-3 text-gray-300 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#DCF34E] md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
                 Actors
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
