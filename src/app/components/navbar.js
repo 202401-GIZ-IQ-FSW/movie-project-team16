@@ -1,42 +1,42 @@
 "use client";
-import React, {useState,  useRef, useEffect} from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
+import GenresList from "../constants/GenresList";
 
 export default function Nav() {
   const [hidden, setHidden] = useState(true);
   const [genreHidden, setGenreHidden] = useState(true);
-  const [hideNavbar, setHideNabar] = useState(true)
-  const wrapperRef  = useRef(null);
+  const [hideNavbar, setHideNabar] = useState(true);
+  const wrapperRef = useRef(null);
 
   const toggleDropdown = (event) => {
-    const toggleId = event.target.getAttribute('data-dropdown-toggle');
+    const toggleId = event.target.getAttribute("data-dropdown-toggle");
     const dropdownElement = document.getElementById(toggleId);
-    if (dropdownElement ) {
-      if(toggleId === "dropdownNavbar"){
+    if (dropdownElement) {
+      if (toggleId === "dropdownNavbar") {
         setHidden(!hidden);
         setGenreHidden(true);
-        }else{
-          setGenreHidden(!genreHidden);
-          setHidden(true);
-
-        }
-      dropdownElement.classList.toggle('hidden');
+      } else {
+        setGenreHidden(!genreHidden);
+        setHidden(true);
+      }
+      dropdownElement.classList.toggle("hidden");
     }
   };
   const handleClickOutside = (event) => {
-    if (wrapperRef .current && !wrapperRef .current.contains(event.target)) {
-        setHidden(true)
-        setGenreHidden(true)
-        setHideNabar(true)
+    if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
+      setHidden(true);
+      setGenreHidden(true);
+      setHideNabar(true);
     }
-};
-
-useEffect(() => {
-  document.addEventListener("click", handleClickOutside);
-  return () => {
-    document.removeEventListener("click", handleClickOutside);
   };
-});
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  });
 
   return (
     <nav className="bg-black border-gray-200 dark:bg-gray-900">
@@ -104,7 +104,7 @@ useEffect(() => {
           <button
             data-collapse-toggle="navbar-search"
             type="button"
-            onClick={()=> setHideNabar(!hideNavbar)}
+            onClick={() => setHideNabar(!hideNavbar)}
             ref={wrapperRef}
             className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
             aria-controls="navbar-search"
@@ -129,7 +129,9 @@ useEffect(() => {
           </button>
         </div>
         <div
-          className={`${hideNavbar ? "hidden" : ""} items-center justify-between w-full md:flex md:w-auto md:order-1`}
+          className={`${
+            hideNavbar ? "hidden" : ""
+          } items-center justify-between w-full md:flex md:w-auto md:order-1`}
           id="navbar-search"
         >
           <div className="relative mt-3 md:hidden">
@@ -196,7 +198,9 @@ useEffect(() => {
               {/* <!-- Dropdown menu --> */}
               <div
                 id="dropdownNavbar"
-                className={`z-10 ${hidden ? 'hidden' : 'opacity-100'} absolute font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600`}
+                className={`z-10 ${
+                  hidden ? "hidden" : "opacity-100"
+                } absolute font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600`}
               >
                 <ul
                   className="py-2 text-sm text-gray-700 dark:text-gray-400"
@@ -226,15 +230,15 @@ useEffect(() => {
                       Now Playing
                     </Link>
                   </li>
+                  <li>
+                    <Link
+                      href="/movies/upcoming"
+                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >
+                      Upcoming
+                    </Link>
+                  </li>
                 </ul>
-                <div className="py-1">
-                  <Link
-                    href="/movies/upcoming"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                  >
-                     Upcoming
-                  </Link>
-                </div>
               </div>
             </li>
             <li>
@@ -265,45 +269,25 @@ useEffect(() => {
               {/* <!-- Dropdown menu --> */}
               <div
                 id="genreDropDownLink"
-                className={`z-10 ${genreHidden ? 'hidden opacity-0' : 'opacity-100'}  absolute font-normal bg-white divide-y w-f divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600  transition-all ease-in-out `}
+                className={`z-10 ${
+                  genreHidden ? "hidden opacity-0" : "opacity-100"
+                }  absolute font-normal bg-white divide-y w-f divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600  transition-all ease-in-out `}
               >
                 <ul
                   className="py-2 text-sm text-gray-700 dark:text-gray-400"
                   aria-labelledby="dropdownLargeButton"
                 >
-                  <li>
-                    <a
-                      href="#"
-                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >
-                      Dashboard
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >
-                      Settings
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >
-                      Earnings
-                    </a>
-                  </li>
+                  {GenresList.genere.map((g) => (
+                    <li key={g.id}>
+                      <Link
+                        href={`/genere/${g.name}`}
+                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >
+                        {g.name}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
-                <div className="py-1">
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                  >
-                    Sign out
-                  </a>
-                </div>
               </div>
             </li>
             <li>
