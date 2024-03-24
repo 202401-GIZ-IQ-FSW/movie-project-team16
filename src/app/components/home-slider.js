@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
-import Card from "./card";
-import Link from "next/link";
+import Card from "./cards/card";
 
 export default function HomeSlider({movieList, title, background, textBackground}) {
   const elementRef = useRef(null);
@@ -25,7 +24,7 @@ export default function HomeSlider({movieList, title, background, textBackground
         />
         <div
          ref={elementRef}
-          className=" la flex overflow-x-auto gap-4
+          className="flex overflow-x-auto gap-4
          scrollbar-none scroll-smooth pt-4 px-20 pb-4"
         >
           {movieList.map((movie) => (

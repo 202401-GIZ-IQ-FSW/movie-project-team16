@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.gradient-blue{
+.gradient-blue {
   background-color: #8ec5fc;
   background-image: linear-gradient(62deg, #d0fcec 0%, #95afe0 100%);
 }
@@ -31,6 +31,42 @@ p {
   transition-delay: 25ms;
   z-index: 1;
 }
+
+.actor-card-container {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid #fff;
+  border-radius: 10px;
+  box-shadow: 4px 4px 20px -4px rgba(21, 37, 65, 0.2);
+  display: flex;
+  flex-direction: row;
+  row-gap: 18px;
+  width: 260px;
+  height: 450px;
+  padding: 12px;
+  transition: 800ms;
+  transition-delay: 25ms;
+  z-index: 1;
+}
+.hidden-content{
+  width: 260px;
+  left: 0;
+  transition: visibility 300ms ease, left 800ms ease;
+  z-index: -1;
+  visibility: hidden;
+}
+.actor-card-container:hover {
+  width: 540px;
+  cursor: pointer;
+  background-color: #afb5eb;
+  background-image: linear-gradient(90deg, #afb5eb 0%, #daecfb 50%);
+  transform: scale(1.01);
+  box-shadow: 8px 8px 40px -4px rgba(21, 37, 65, 0.3);
+}
+.actor-card-container:hover .hidden-content{
+  visibility: visible;
+  left: 50%;
+}
+
 .gradient {
   border-radius: 18px;
   z-index: -1;
@@ -135,7 +171,7 @@ h2 {
   border-radius: 8px;
 }
 
-#hero_main{
+#hero_main {
   position: relative;
   width: 100%;
   height: 100vh;
@@ -143,7 +179,7 @@ h2 {
   overflow: hidden;
 }
 
-#hero_top{
+#hero_top {
   position: absolute;
   top: 0%;
   width: 100%;
@@ -153,17 +189,17 @@ h2 {
   overflow: hidden;
 }
 
-#hero_center{
+#hero_center {
   position: relative;
   width: 100%;
   height: 100vh;
   transform-origin: center;
   background-color: rgb(0, 0, 0);
-  transition: all cubic-bezier(0.19, 1, 0.22, 1)1s;
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
   overflow: hidden;
 }
 
-#hero_bottom{
+#hero_bottom {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -172,7 +208,7 @@ h2 {
   overflow: hidden;
 }
 
-#hero_main h1{
+#hero_main h1 {
   font-family: var(--font-aeonik-fono), sans-serif;
   font-size: 22vw;
   position: absolute;
@@ -183,15 +219,15 @@ h2 {
   transform: translate(-50%, -50%);
 }
 
-#hero_top-h1{
-  top: 100%!important;
+#hero_top-h1 {
+  top: 100% !important;
 }
 
-#hero_bottom-h1{
+#hero_bottom-h1 {
   top: 0% !important;
 }
 
-.hero_content{
+.hero_content {
   margin-top: 100vh;
   display: flex;
   flex-direction: column;
@@ -203,12 +239,12 @@ h2 {
   gap: 4vh;
 }
 
-.hero_content h4{
+.hero_content h4 {
   font-size: 1vw;
   font-family: var(--font-aeonik-fono), sans-serif;
 }
 
-.hero_content h3{
+.hero_content h3 {
   width: 22%;
   font-size: 3vw;
   font-family: CardinalR;
@@ -216,7 +252,7 @@ h2 {
   font-weight: 400;
 }
 
-.hero_content .btn{
+.hero_content .btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -228,14 +264,10 @@ h2 {
   font-family: var(--font-aeonik-fono), sans-serif;
 }
 
-.hero_content h2{
+.hero_content h2 {
   font-size: 20vw;
   font-family: var(--font-aeonik-fono), sans-serif;
 }
-
-
-
-
 
 /* # Front-end Style Guide
 
