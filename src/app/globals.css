@@ -2,26 +2,104 @@
 @tailwind components;
 @tailwind utilities;
 
-
- /* Hide scrollbar for Chrome, Safari and Opera */
- .scrollbar-none::-webkit-scrollbar {
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-none::-webkit-scrollbar {
   display: none;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .scrollbar-none {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-} 
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
 
 .gradient-blue {
   background-color: #8ec5fc;
   background-image: linear-gradient(62deg, #d0fcec 0%, #95afe0 100%);
 }
+
+.gradient-pink {
+  background-color: #faaca8;
+  background-image: linear-gradient(19deg, #a39dd3 0%, #c6baef 100%);
+}
+
+.gradient-purple {
+  background-color: rgb(222, 238, 118);
+  background-image: linear-gradient(19deg, #786ddb 0%, #b7dcec 100%);
+}
+
 h2,
 p {
   transition: 400ms;
   margin: 0px;
+}
+
+.Mystery {
+  color: rgb(169, 241, 46);
+}
+
+.Action {
+  color: rgb(241, 64, 29);
+}
+
+.Adventure {
+  color: rgb(181, 177, 234);
+}
+
+.Animation {
+  color: rgb(241, 241, 46);
+}
+
+.Comedy {
+  color: rgb(75, 111, 220);
+}
+
+.Crime {
+  color: rgb(51, 23, 96);
+}
+
+.Documentary {
+  color: rgb(142, 239, 237);
+}
+
+.Drama {
+  color: rgb(181, 155, 218);
+}
+
+.Family {
+  color: rgb(99, 210, 30);
+}
+
+.Fantasy {
+  color: rgb(30, 204, 210);
+}
+
+.History {
+  color: rgb(118, 103, 116);
+}
+
+.Horror {
+  color: rgb(30, 48, 210);
+}
+
+.Music {
+  color: rgb(210, 30, 168);
+}
+
+.Romance {
+  color: rgb(219, 116, 159);
+}
+
+.Thriller {
+  color: rgb(18, 75, 87);
+}
+
+.War {
+  color: rgb(62, 87, 18);
+}
+
+.Western {
+  color: rgb(149, 125, 81);
 }
 
 .main-container {
@@ -59,7 +137,7 @@ p {
   transition-delay: 25ms;
   z-index: 1;
 }
-.hidden-content{
+.hidden-content {
   width: 260px;
   left: 0;
   transition: visibility 300ms ease, left 800ms ease;
@@ -74,7 +152,7 @@ p {
   transform: scale(1.01);
   box-shadow: 8px 8px 40px -4px rgba(21, 37, 65, 0.3);
 }
-.actor-card-container:hover .hidden-content{
+.actor-card-container:hover .hidden-content {
   visibility: visible;
   left: 50%;
 }
@@ -257,7 +335,7 @@ h2 {
 }
 
 .hero_content h3 {
-  width: 22%;
+  width: 60%;
   font-size: 3vw;
   font-family: CardinalR;
   text-align: center;

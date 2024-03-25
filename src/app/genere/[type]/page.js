@@ -6,8 +6,10 @@ import GenresList from "@/app/constants/GenresList";
 
 export default function Movies({ params }) {
   const [movieList, setMovieList] = useState([]);
-  const genreId = GenresList.genere.find(genre => genre.name === params.type)?.id;
-  console.log(genreId)
+  const genreId = GenresList.genere.find(
+    (genre) => genre.name === params.type
+  )?.id;
+  console.log(genreId);
   useEffect(() => {
     getPopMovies();
   }, []);
@@ -19,13 +21,14 @@ export default function Movies({ params }) {
   };
   return (
     <div className="bg-black">
-      <div className="actor-hero  flex items-center h-[500px] p-12">
-        <h1 className="font-body  text-white text-[62px] font-light py-10">
-          Behold the
-          <p className="font-bod text-[110px] text-cente font-bold p-0 text-[#8784e8] opacity-95">
-            magic-makers
+      <div className="actor-hero  flex items-center h-[400px] px-12 py-6">
+        <h1 className="font-body  text-white text-[62px] font-light py-6">
+          It's time for some
+          <p
+            className={`${params.type} font-bod text-[110px] text-cente font-bold p-0 opacity-95`}
+          >
+            {params.type}!
           </p>
-          behind our adored characters!
         </h1>
       </div>
       <div className="flex w-screen h-fit flex-wrap p-10 pb-20 gap-6">
