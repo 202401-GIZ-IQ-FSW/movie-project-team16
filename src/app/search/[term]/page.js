@@ -1,17 +1,17 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import GlobalApi from "@/app/services/globalApi";
-import Card from "../../components/cards/card";
+import { useState, useEffect } from "react";
+import globalApi from "../../services/globalApi";
+import Card from "@/app/components/cards/card";
 
-export default function Movies({ params }) {
+export default function Page({ params }) {
   const [movieList, setMovieList] = useState([]);
 
   useEffect(() => {
-    getPopMovies();
+    onSearch(params.term);
   }, []);
 
-  const getPopMovies = () => {
-    GlobalApi.getMoviesByType(params.type).then((resp) => {
+  const onSearch = (term) => {
+    globalApi.searchMoviesByName(term).then((resp) => {
       setMovieList(resp.data.results);
     });
   };
