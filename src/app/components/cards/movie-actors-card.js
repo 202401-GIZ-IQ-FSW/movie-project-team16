@@ -30,7 +30,7 @@ export default function ActorCard({ actor }) {
           <div className="flex gap-3">
             <div className="flex items-baseline justify-between gap-2  bg-[#c2c1e6] py-[4px] px-[8px]  rounded-md">
               <Image
-                src="./icons/chalkboard-user-solid.svg"
+                src="./../icons/chalkboard-user-solid.svg"
                 alt="star"
                 width="14"
                 height="14"
