@@ -20,6 +20,8 @@ const getSingleMovie = (id) =>axios.get(`${movieBaseUrl}/movie/${id}?api_key=${a
 const getMovieCredits = (id) =>axios.get(`${movieBaseUrl}/movie/${id}/credits?api_key=${api_key}`);
 const getMovieRecommendations = (id) =>axios.get(`${movieBaseUrl}/movie/${id}/recommendations?api_key=${api_key}`)
 const getMoviesByType = (type) => axios.get(`${movieBaseUrl}/movie/${type}?api_key=${api_key}`)
+const searchMoviesByName = (name)=> axios.get(`${movieBaseUrl}/search/movie?query=${name}&api_key=${api_key}`)
+
 
 const getActor = (id)=> axios.get(`${actorBaseUrl}/person/${id}?api_key=${api_key}`)
 const getActors = axios.get(`${actorBaseUrl}/person/popular?api_key=${api_key}`)
@@ -31,6 +33,7 @@ export default{
     getMovieCredits,
     getMovieRecommendations,
     getMoviesByType,
+    searchMoviesByName,
     getActor,
     getActors
 }
