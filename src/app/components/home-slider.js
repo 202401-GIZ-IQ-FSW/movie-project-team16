@@ -1,10 +1,22 @@
 import React, { useEffect, useRef, useState } from "react";
 import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
 import Card from "./cards/card";
+import GlobalApi from "../services/globalApi";
 
-export default function HomeSlider({movieList, title, background, textBackground}) {
+
+export default function HomeSlider({type, title, background, textBackground}) {
   const elementRef = useRef(null);
-    
+  const [movieList, setMovieList] = useState([]);
+ 
+  useEffect(() => {
+    getPopMovies();
+  }, []);
+
+  const getPopMovies = () => {
+    GlobalApi.getMoviesByType(type).then(resp=>{
+      setMovieList(resp.data.results)
+  })
+  };
 
   const slideRight = (element) => {
     element.scrollLeft += 500;

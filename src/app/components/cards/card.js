@@ -6,7 +6,6 @@ const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/original";
 
 
 export default function({ movie }) {
-  console.log(movie)
   return (
     <Link href={`/movie/${movie.id}`} >
     <div className="card-container ">
@@ -37,7 +36,7 @@ export default function({ movie }) {
           <div className="flex gap-3">
             <div className="flex items-center justify-between gap-2 bg-[#c4f34e] py-[4px] px-[8px] rounded-md">
               <Image
-                src="./icons/calendar-regular.svg"
+                src="./../icons/calendar-regular.svg"
                 alt="calendar"
                 width="14"
                 height="14"
@@ -46,7 +45,7 @@ export default function({ movie }) {
             </div>
             <div className="flex items-center justify-between gap-2  bg-[#c2c1e6] py-[4px] px-[8px]  rounded-md">
               <Image
-                src="./icons/star-regular.svg"
+                src="./../icons/star-regular.svg"
                 alt="star"
                 width="14"
                 height="14"

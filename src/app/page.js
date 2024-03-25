@@ -2,29 +2,36 @@
 import React, { useEffect, useRef, useState } from "react";
 
 import HomeSlider from "./components/home-slider";
-import GlobalApi from "./services/globalApi";
 import Hero from "./components/hero";
 
 export default function Home() {
-  const [movieList, setMovieList] = useState([]);
- 
-  useEffect(() => {
-    getPopMovies();
-  }, []);
-
-  const getPopMovies = () => {
-    GlobalApi.getTrendingVideos.then(resp=>{
-      setMovieList(resp.data.results)
-  })
-  };
-
   return (
     <>
-
-      <Hero/>
-      <HomeSlider movieList={movieList} title={"Latest Movies"} background={"gradient-blue"}/>
+      <Hero />
+      <HomeSlider
+        type={"top_rated"}
+        title={"Top Rated"}
+        background={"gradient-blue pb-12"}
+      />
+      <HomeSlider
+        type={"popular"}
+        title={"Popular"}
+        textBackground={"text-white"}
+        background={"pb-12"}
+      />
+      <HomeSlider
+        type={"now_playing"}
+        title={"Now Playing"}
+        textBackground={"text-white"}
+        background={"pb-12"}
+      />
+      <HomeSlider
+        type={"upcoming"}
+        title={"Upcoming"}
+        textBackground={"text-white"}
+        background={"bg-black pb-12"}
+      />
       {/* <div>test</div> */}
-     
     </>
   );
 }
