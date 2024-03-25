@@ -12,7 +12,7 @@ export default function({ movie }) {
     <div className="card-container ">
       <div className="image-container">
         <Image
-          src={IMAGE_BASE_URL + movie.poster_path}
+          src={ movie.poster_path ? IMAGE_BASE_URL + movie.poster_path: "/images/dune.webp"}
           alt="movie poster"
           width="290"
           height="290"
