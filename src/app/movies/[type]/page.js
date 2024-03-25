@@ -16,17 +16,13 @@ export default function Movies({ params }) {
     });
   };
   return (
-    <div className="bg-black">
-      <div className="actor-hero  flex items-center h-[500px] p-12">
-        <h1 className="font-body  text-white text-[62px] font-light py-10">
-          Behold the
-          <p className="font-bod text-[110px] text-cente font-bold p-0 text-[#8784e8] opacity-95">
-            magic-makers
-          </p>
-          behind our adored characters!
+    <div className="gradient-purple flex flex-col">
+      <div className="actor-hero w-fit flex items-center h-[500px] p-12">
+        <h1 className="font-body text-black leading-tight text-center text-[64px] lg:text-[96px] font-regular py-6">
+          Where every scene is a story, every frame an adventure!
         </h1>
       </div>
-      <div className="flex w-screen h-fit flex-wrap p-10 pb-20 gap-6">
+      <div className="flex w-screen h-fit flex-wrap p-10 pl-12 pb-20 gap-6 items-center justify-center ">
         {movieList.map((movie) => (
           <Card movie={movie} key={movie.id} />
         ))}

@@ -40,7 +40,7 @@ export default function Nav() {
   });
 
   return (
-    <nav className="bg-black border-gray-200 dark:bg-gray-900">
+    <nav className="bg-black border-gray-200 ">
       <div className=" flex flex-wrap items-center justify-between mx-auto p-4 px-12">
         <Link
           href="/"
@@ -76,7 +76,7 @@ export default function Nav() {
             </svg>
             <span className="sr-only">Search</span>
           </button>
-          <SearchBar/>
+          <SearchBar />
           <button
             data-collapse-toggle="navbar-search"
             type="button"
