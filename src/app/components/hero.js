@@ -82,9 +82,11 @@ export default function Hero() {
     <div>
       <div ref={main} id="hero_main">
         <div ref={top} id="hero_top">
+
           <h1 ref={top_h1} id="hero_top-h1">
             Notflix
           </h1>
+
         </div>
         <div ref={center} id="hero_center">
           <div ref={content} className="hero_content">

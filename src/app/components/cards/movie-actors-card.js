@@ -8,7 +8,7 @@ export default function ActorCard({ actor }) {
     <div className="card-container ">
       <div className="image-container">
         <Image
-          src={IMAGE_BASE_URL + actor.profile_path}
+          src={actor.profile_path? IMAGE_BASE_URL + actor.profile_path : "/images/placeholderActor.webp"}
           alt="actor poster"
           width="290"
           height="290"

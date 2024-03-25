@@ -1,7 +1,9 @@
 import React from "react";
 import Image from "next/image";
-const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/original";
 import Link from "next/link";
+
+const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/original";
+
 export default function ActorCard({ actor }) {
   return (
     <Link href={`/actors/${actor.id}`} >
@@ -11,7 +13,7 @@ export default function ActorCard({ actor }) {
           <div className="image-container">
             <Image
               // src="/images/keanureeves.webp"
-              src={IMAGE_BASE_URL + actor.profile_path}
+              src={actor.profile_path? IMAGE_BASE_URL + actor.profile_path : "/images/placeholderActor.webp"}
               alt="actor poster"
               width="290"
               height="290"
