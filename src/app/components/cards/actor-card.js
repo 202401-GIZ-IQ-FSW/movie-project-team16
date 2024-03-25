@@ -28,7 +28,7 @@ export default function ActorCard({ actor }) {
             <div className="flex items-center ">
               <div className="flex items-baseline justify-between gap-2  bg-[#c2c1e6] py-[4px] px-[8px]  rounded-md">
                 <Image
-                  src="./icons/star-regular.svg"
+                  src="./../icons/star-regular.svg"
                   alt="star"
                   width="10"
                   height="10"
@@ -43,7 +43,7 @@ export default function ActorCard({ actor }) {
           <div className="toasts flex flex-col md:flex-row gap-4">
             <div className="flex items-center gap-2 bg-[#d0ec2f] px-2 py-1  w-fit md:px-4 md:py-2 rounded-md">
               <Image
-                src="./icons/venus-mars-solid.svg"
+                src="./../icons/venus-mars-solid.svg"
                 alt="gender"
                 width="10"
                 height="10"
@@ -55,7 +55,7 @@ export default function ActorCard({ actor }) {
           </div>
           <div className="flex items-center gap-2  w-fit mt-2 px-2 py-1 md:px-4 md:py-2 rounded-md">
             <Image
-              src="./icons/location-dot-solid.svg"
+              src="./../icons/location-dot-solid.svg"
               alt="calendar"
               width="10"
               height="10"

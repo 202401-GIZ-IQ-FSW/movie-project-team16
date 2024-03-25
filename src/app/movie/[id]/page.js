@@ -1,7 +1,6 @@
 "use client";
 import React, {useState, useEffect, useRef} from "react";
 import Image from "next/image";
-import localFont from "next/font/local";
 import { Button } from "flowbite-react";
 import GlobalApi from "../../services/globalApi"
 import ActorCard from "../../components/cards/movie-actors-card";
@@ -20,6 +19,7 @@ function SingleMovie({params}) {
   const elementRef = useRef(null);
   const [movie, setMovie] = useState([]);
   const [credits, setCredits] = useState([]);
+  const [director, setDirector] = useState([]);
   const [recommendations, setRecommendations] = useState([])
 
 
@@ -30,9 +30,12 @@ function SingleMovie({params}) {
   const getMovie = () => {
     GlobalApi.getSingleMovie(params.id).then(resp=>{
       setMovie(resp.data)
+      console.log(resp.data)
   })
   GlobalApi.getMovieCredits(params.id).then(resp=>{
     setCredits(resp.data.cast)
+    setDirector(resp.data.crew.filter(({job})=> job ==='Director')[0].name)
+
 })
 
 GlobalApi.getMovieRecommendations(params.id).then(resp=>{
@@ -74,7 +77,7 @@ GlobalApi.getMovieRecommendations(params.id).then(resp=>{
               {" "}
               <div className="movie-rating flex items-center gap-2">
                 <Image
-                  src="./icons/star-solid.svg"
+                  src="./../icons/star-solid.svg"
                   alt="star"
                   width="32"
                   height="32"
@@ -87,7 +90,7 @@ GlobalApi.getMovieRecommendations(params.id).then(resp=>{
             <div className="toasts flex flex-col md:flex-row gap-4">
               <div className="flex items-center gap-2 bg-[#c2c1e6]  w-fit px-2 py-1 md:px-4 md:py-2 rounded-md">
                 <Image
-                  src="./icons/calendar-regular.svg"
+                  src="./../icons/calendar-regular.svg"
                   alt="calendar"
                   width="14"
                   height="14"
@@ -98,7 +101,7 @@ GlobalApi.getMovieRecommendations(params.id).then(resp=>{
               </div>
               <div className="flex items-center gap-2 bg-[#d0ec2f] px-2 py-1  w-fit md:px-4 md:py-2 rounded-md">
                 <Image
-                  src="./icons/clock-regular.svg"
+                  src="./../icons/clock-regular.svg"
                   alt="clock"
                   width="14"
                   height="14"
@@ -110,7 +113,7 @@ GlobalApi.getMovieRecommendations(params.id).then(resp=>{
             </div>
             <div className="flex items-center gap-2 bg-[#caeeff]  w-fit px-2 py-1 md:px-4 md:py-2 rounded-md">
               <Image
-                src="./icons/language-solid.svg"
+                src="./../icons/language-solid.svg"
                 alt="calendar"
                 width="20"
                 height="14"
@@ -123,30 +126,32 @@ GlobalApi.getMovieRecommendations(params.id).then(resp=>{
               {movie.overview}
             </p>
             <p className="director-name text-gray-300 font-heading font-light text-sm md:text-md max-w-md">
-              Director: Christopher Nolan
+              Director: {director}
             </p>
-            <div className="production-company items-center flex-col gap-12 mt-2">
+            <h1 className="text-white font-semibold  mt-2">Production Compaines</h1>
+            <div className="items-center flex  flex-wrap gap-4">
               {/* {movie.production_companies[0]} */}
-              {movie.production_companies?.map((production)=>{
-                <div className="flex items-center mb-4 gap-6">
+              {movie.production_companies?.map((production)=>(
+                <div key={production.id} className="flex items-center mb-4 gap-6">
                     <Image
                     key={production.id}
                   // className="rounded-md"
-                  src="/images/20th-Century-Studios.png"
+                  src={IMAGE_BASE_URL + production.logo_path}
                   alt="calendar"
                   width="32"
                   height="14"
                 />
                 <p className="producer-name text-gray-300 font-heading font-light text-sm md:text-md max-w-md">
-                  Paramount Pictures
+                 {production.name}
                 </p>
                 
               </div>
-              })}
-              <Button className="trailer-button flex w-[200px]">
+              ))}
+            
+            </div>
+            <Button className="trailer-button flex w-[200px]">
                 Watch Trailer
               </Button>
-            </div>
           </div>
         </div>
       </div>
