@@ -82,16 +82,23 @@ export default function Hero() {
     <div>
       <div ref={main} id="hero_main">
         <div ref={top} id="hero_top">
-
           <h1 ref={top_h1} id="hero_top-h1">
             Notflix
           </h1>
-
         </div>
+        {/* .hero_content h3 {
+  width: 60%;
+  font-size: 3vw;
+  font-family: CardinalR;
+  text-align: center;
+  font-weight: 400;
+} */}
         <div ref={center} id="hero_center">
           <div ref={content} className="hero_content">
-            <h4>Notflix</h4>
-            <h3>
+            <h4 className=" font-heading text-[24px] lg:text-[42px] font-medium text-[#c5ed57]">
+              („• ֊ •„)/ Welcome! ♡
+            </h4>
+            <h3 className="w-[80%] font-thin text-center text-[54px] lg:text-[84px] leading-tight font-body">
               <i>Explore </i> a cinematic journey through the{" "}
               <i>digital aisles</i> of movie treasures.
             </h3>
