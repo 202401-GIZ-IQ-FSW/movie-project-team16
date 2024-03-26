@@ -5,7 +5,7 @@ import Link from "next/link";
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/original";
 
 
-export default function({ movie }) {
+export default  function Card ({ movie }) {
   return (
     <Link href={`/movie/${movie.id}`} >
     <div className="card-container ">

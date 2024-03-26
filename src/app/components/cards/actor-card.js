@@ -70,7 +70,7 @@ export default function ActorCard({ actor }) {
                 {actor.place_of_birth}
               </p>
             </div> */}
-            <h1 className="font-bold  mt-8 text-lg"> Known for</h1>
+            <h1 className="font-bold  mt-4 text-lg"> Known for</h1>
             <div className="w-fit">
               {actor.known_for.slice(0, 2).map((movie) => (
                 <div className=" py-2  mb-2 " key={movie.id}>
@@ -92,7 +92,7 @@ export default function ActorCard({ actor }) {
               ))}
             </div>
           </div>
-          <div className="flex items-center gap-2  w-fit mt-2 px-2 py-1 md:px-4 md:py-2 rounded-md">
+          {/* <div className="flex items-center gap-2  w-fit mt-2 px-2 py-1 md:px-4 md:py-2 rounded-md">
             <Image
               src="/icons/location-dot-solid.svg"
               alt="calendar"
@@ -102,27 +102,8 @@ export default function ActorCard({ actor }) {
             <p className="release-date font-heading text-sm font-light whitespace-nowrap ">
               {actor.place_of_birth}
             </p>
-          </div>
-          <h1 className=" font-bold text-lg"> Known for</h1>
-          <div className="w-fit">
-            {actor.known_for.slice(0, 2).map((movie) => (
-              <div className="bg-white p-2  mb-2 " key={movie.id}>
-                <h1 className=" font-bold">
-                  
-                  {movie.original_title
-                    ? movie.original_title.length > 15
-                      ? movie.original_title.slice(0, 15) + "..."
-                      : movie.original_title
-                    : movie.original_name > 15
-                    ? movie.original_name.slice(0, 15)
-                    : movie.original_name}
-                </h1>
-                <p className="movie-description mt-1font-body font-light text-sm md:text-md h-fit">
-                  {movie.overview.length > 200? movie.overview.slice(0,200) + "..." : movie.overview}
-                </p>
-              </div>
-            ))}
-          </div>
+          </div> */}
+         
         </div>
       </div>
     </Link>
