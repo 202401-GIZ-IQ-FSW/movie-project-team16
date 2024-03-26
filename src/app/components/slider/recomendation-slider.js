@@ -1,27 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
-import Card from "./cards/card";
-import GlobalApi from "../services/globalApi";
+import Card from "../cards/card";
+import GlobalApi from "../../services/globalApi";
 
-export default function HomeSlider({
-  type,
-  title,
-  background,
-  textBackground,
-}) {
+
+export default function RecommendationsSlider({movieList, title, background, textBackground}) {
   const elementRef = useRef(null);
-  const [movieList, setMovieList] = useState([]);
-
-  useEffect(() => {
-    getPopMovies();
-  }, []);
-
-  const getPopMovies = () => {
-    GlobalApi.getMoviesByType(type).then((resp) => {
-      setMovieList(resp.data.results);
-    });
-  };
-
+ 
   const slideRight = (element) => {
     element.scrollLeft += 500;
   };
@@ -30,11 +15,7 @@ export default function HomeSlider({
   };
   return (
     <div className={background}>
-      <h1
-        className={`pl-20 pt-12 font-body text-[64px] lg:text-[96px] ${textBackground}`}
-      >
-        {title}
-      </h1>
+      <h1 className={`pl-20 pt-12 font-body text-[96px] ${textBackground}`}>{title}</h1>
       <div className="relative">
         <IoChevronBackOutline
           onClick={() => slideLeft(elementRef.current)}
@@ -43,12 +24,13 @@ export default function HomeSlider({
             hidden md:block absolute top-1/2"
         />
         <div
-          ref={elementRef}
+         ref={elementRef}
           className="flex overflow-x-auto gap-4
          scrollbar-none scroll-smooth pt-4 px-20 pb-4"
         >
           {movieList.map((movie) => (
-            <Card key={movie.id} movie={movie} />
+           
+              <Card key={movie.id} movie={movie}/>
           ))}
         </div>
         <IoChevronForwardOutline
@@ -58,6 +40,6 @@ export default function HomeSlider({
             absolute right-0 top-1/2"
         />
       </div>
-    </div>
-  );
+      </div>
+  )
 }

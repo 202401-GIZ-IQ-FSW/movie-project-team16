@@ -6,10 +6,10 @@ import GenresList from "@/app/constants/GenresList";
 
 export default function Movies({ params }) {
   const [movieList, setMovieList] = useState([]);
+  const genreName = params.type.replace(/%20/g, " ")
   const genreId = GenresList.genere.find(
-    (genre) => genre.name === params.type
+    (genre) => genre.name === genreName
   )?.id;
-  console.log(genreId);
   useEffect(() => {
     getPopMovies();
   }, []);
@@ -25,9 +25,9 @@ export default function Movies({ params }) {
         <h1 className="font-body  text-white text-[38px] lg:text-[62px] font-light py-6">
           It's time for some
           <p
-            className={`${params.type} font-bod text-[56px] lg:text-[110px] text-cente font-bold p-0 opacity-95`}
+            className={`${genreName} font-bod text-[110px] text-cente font-bold p-0 opacity-95`}
           >
-            {params.type}!
+            {genreName}!
           </p>
         </h1>
       </div>

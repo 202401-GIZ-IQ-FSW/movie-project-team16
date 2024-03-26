@@ -216,13 +216,13 @@ h2 {
   background-image: linear-gradient(90deg, #94dce7 0%, #fbdae0 50%);
 }
 
-.trailer-button :hover {
+/* .trailer-button :hover {
   justify-content: center;
   text-align: center;
   width: 420px;
   color: white;
   background-image: linear-gradient(90deg, #04c4b8 0%, #a6a0c0 50%);
-}
+} */
 
 .gradient-overlay {
   z-index: -1;

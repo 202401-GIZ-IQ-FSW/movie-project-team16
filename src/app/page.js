@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 
-import HomeSlider from "./components/home-slider";
+import HomeSlider from "./components/slider/home-slider";
 import Hero from "./components/hero";
 
 export default function Home() {

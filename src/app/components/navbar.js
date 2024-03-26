@@ -3,6 +3,7 @@ import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import GenresList from "../constants/GenresList";
 import SearchBar from "./search-bar";
+import Image from "next/image";
 
 export default function Nav() {
   const [hidden, setHidden] = useState(true);
@@ -46,7 +47,7 @@ export default function Nav() {
           href="/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
-          <img src="./images/N.png" alt="logo" width="32px" />
+          <Image src="/images/N.png" alt="logo" width="32" height="32" />
           <span className="font-heading font-[300] self-center text-3xl whitespace-nowrap text-white">
             Notflix
           </span>
@@ -256,7 +257,7 @@ export default function Nav() {
                   {GenresList.genere.map((g) => (
                     <li key={g.id}>
                       <Link
-                        href={`/genere/${g.name}`}
+                        href={`/genre/${g.name}`}
                         className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                       >
                         {g.name}

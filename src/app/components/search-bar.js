@@ -1,11 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useRouter } from 'next/navigation'
+
 export default function SearchBar() {
     const [searchTerm, setSearchTerm] = useState("");
+    const router = useRouter()
 
    // const { data, setNewData } = useGlobalContext();
-
-
+  useEffect(() => {
+    window.addEventListener('keydown', e => {
+     if(e.key === 'Enter'){
+      router.push(`/search/${searchTerm}`);
+     }
+    })
+   })
 
   return (
     <>
