@@ -3,22 +3,20 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import localFont from "next/font/local";
 import { Button } from "flowbite-react";
-import GlobalApi from "../../services/globalApi"
+import GlobalApi from "../../services/globalApi";
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/original";
 
-
-function SingleMovie({params}) {
-
-  const [actor, setActor] = useState([])
+function SingleMovie({ params }) {
+  const [actor, setActor] = useState([]);
   useEffect(() => {
     getActor();
   }, []);
 
-  const getActor = ()=>{
-    GlobalApi.getActor(params.id).then(res =>{
-       setActor(res.data)
-      })
-  } 
+  const getActor = () => {
+    GlobalApi.getActor(params.id).then((res) => {
+      setActor(res.data);
+    });
+  };
   return (
     <div className="relative bg-slate-100">
       <div className="body relative gap-12 p-12">

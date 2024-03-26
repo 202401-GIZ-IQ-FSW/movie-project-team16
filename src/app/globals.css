@@ -329,18 +329,9 @@ h2 {
   gap: 4vh;
 }
 
-.hero_content h4 {
-  font-size: 1vw;
-  font-family: var(--font-aeonik-fono), sans-serif;
-}
 
-.hero_content h3 {
-  width: 60%;
-  font-size: 3vw;
-  font-family: CardinalR;
-  text-align: center;
-  font-weight: 400;
-}
+
+
 
 .hero_content .btn {
   display: flex;
