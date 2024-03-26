@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -21,28 +22,28 @@ export default function Footer() {
               </h2>
               <ul className="text-gray-500 dark:text-gray-400">
                 <li className="mb-4">
-                  <a
-                    href="https://github.com/themesberg/flowbite"
+                  <Link
+                    href="/"
                     className="hover:underline "
                   >
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li className="mb-4">
-                  <a
-                    href="https://github.com/themesberg/flowbite"
+                  <Link
+                    href="/movies/popular"
                     className="hover:underline "
                   >
                     Movies
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="https://discord.gg/4eeurUVvTy"
+                  <Link
+                    href="/actors"
                     className="hover:underline"
                   >
                     Actors
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
