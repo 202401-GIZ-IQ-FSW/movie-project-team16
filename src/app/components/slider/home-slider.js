@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
-import Card from "./cards/card";
-import GlobalApi from "../services/globalApi";
+import Card from "../cards/card";
+import GlobalApi from "../../services/globalApi";
 
 
 export default function HomeSlider({type, title, background, textBackground}) {

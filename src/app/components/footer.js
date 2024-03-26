@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Footer() {
   return (
     <footer className="bg-black dark:bg-gray-900">
@@ -5,11 +7,7 @@ export default function Footer() {
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
             <div className="font-heading font-[400] flex items-center">
-              <img
-                src="./images/N.png"
-                className="h-8 me-3"
-                alt="Notflix Logo"
-              />
+              <Image className="h-8 me-3" src="/images/N.png" alt="Notflix Logo"width="32" height={"32"} />
               <span className="self-center text-2xl  whitespace-nowrap text-white">
                 Notflix
               </span>
@@ -58,7 +56,7 @@ export default function Footer() {
                     Hiwa Sadradeen
                   </a>
                   <a
-                    href="#"
+                    href="https://github.com/HeewaDev"
                     className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-2"
                   >
                     <svg
@@ -99,7 +97,7 @@ export default function Footer() {
                     Pasand Yaba
                   </a>
                   <a
-                    href="#"
+                    href="https://github.com/pasanddd"
                     className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-2"
                   >
                     <svg
@@ -118,7 +116,7 @@ export default function Footer() {
                     <span className="sr-only">GitHub account</span>
                   </a>
                   <a
-                    href="#"
+                    href="https://www.linkedin.com/in/pasand-yaba/"
                     className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-2"
                   >
                     <svg
@@ -140,7 +138,7 @@ export default function Footer() {
                     Rawan Mustafa
                   </a>
                   <a
-                    href="#"
+                    href="https://github.com/0rawan"
                     className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-2"
                   >
                     <svg
@@ -181,7 +179,7 @@ export default function Footer() {
                     Sarah Mustafa
                   </a>
                   <a
-                    href="#"
+                    href="https://github.com/Leorahx"
                     className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-2"
                   >
                     <svg
@@ -200,7 +198,7 @@ export default function Footer() {
                     <span className="sr-only">GitHub account</span>
                   </a>
                   <a
-                    href="#"
+                    href="https://www.linkedin.com/in/leorahx/"
                     className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-2"
                   >
                     <svg

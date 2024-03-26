@@ -14,7 +14,6 @@ function Actors() {
   const getPopMovies = () => {
     GlobalApi.getActors.then(resp=>{
       setActors(resp.data.results)
-      console.log(resp.data.results)
   })
   };
   return (
