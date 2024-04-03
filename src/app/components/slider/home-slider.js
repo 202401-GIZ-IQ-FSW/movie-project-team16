@@ -31,7 +31,7 @@ export default function HomeSlider({
   return (
     <div className={background}>
       <h1
-        className={`pl-20 pt-12 font-body text-[64px] lg:text-[96px] ${textBackground}`}
+        className={`pl-4 md:pl-20 pt-12 font-body text-[56px] lg:text-[96px] ${textBackground}`}
       >
         {title}
       </h1>
@@ -45,7 +45,7 @@ export default function HomeSlider({
         <div
           ref={elementRef}
           className="flex overflow-x-auto gap-4
-         scrollbar-none scroll-smooth pt-4 px-20 pb-4"
+         scrollbar-none scroll-smooth pt-4 px-4 md:px-20 pb-4"
         >
           {movieList.map((movie) => (
             <Card key={movie.id} movie={movie} />

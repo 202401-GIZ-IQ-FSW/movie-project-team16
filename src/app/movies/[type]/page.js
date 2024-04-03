@@ -18,7 +18,7 @@ export default function Movies({ params }) {
   return (
     <div className="gradient-purple flex flex-col">
       <div className="actor-hero w-fit flex items-center h-[500px] p-12">
-        <h1 className="font-body text-black leading-tight text-center text-[64px] lg:text-[96px] font-regular py-6">
+        <h1 className="font-body text-black leading-tight text-center text-[56px] lg:text-[96px] font-regular py-6">
           Where every scene is a story, every frame an adventure!
         </h1>
       </div>

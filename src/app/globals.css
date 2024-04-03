@@ -156,7 +156,22 @@ p {
   visibility: visible;
   left: 50%;
 }
-
+@media screen and (max-width: 600px) {
+  .actor-card-container:hover {
+    width: 260px;
+  }
+  .actor-card-container:hover .hidden-content {
+    visibility: visible;
+    height: 100%;
+    padding: 1rem;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    border-radius: 10px;
+    background-color: #afb5eb;
+    background-image: linear-gradient(90deg, #afb5eb 0%, #daecfb 50%);
+  }
+}
 .gradient {
   border-radius: 18px;
   z-index: -1;
