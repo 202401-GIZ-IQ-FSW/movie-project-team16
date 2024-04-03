@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="bg-black dark:bg-gray-900">
-      <div className="mx-auto w-full p-4 py-6 lg:py-8 px-12">
+      <div className="mx-auto w-full p-4 py-6 lg:py-8 ps-4 md:px-12">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
             <div className="font-heading font-[400] flex items-center">
@@ -15,7 +15,7 @@ export default function Footer() {
             </div>
           </div>
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
-            <div></div>
+            <div className=" hidden md:block"></div>
             <div className="font-heading font-[300]">
               <h2 className="mb-6 text-sm  text-gray-300 uppercase dark:text-white">
                 Pages
@@ -52,7 +52,7 @@ export default function Footer() {
                 Our Team Members
               </h2>
               <ul className="text-gray-500 dark:text-gray-400">
-                <li className="mb-4 flex justify-around">
+                {/* <li className="mb-4 flex justify-around">
                   <a href="https://flowbite.com/" className="hover:underline">
                     Hiwa Sadradeen
                   </a>
@@ -130,14 +130,13 @@ export default function Footer() {
                     </svg>
                     <span className="sr-only">Linkedin account</span>
                   </a>
-                </li>
+                </li> */}
                 <li className="mb-4 flex">
-                  <a
-                    href="https://tailwindcss.com/"
-                    className="hover:underline"
+                  <div
+                    className="hover:underline text-nowrap"
                   >
                     Rawan Mustafa
-                  </a>
+                  </div>
                   <a
                     href="https://github.com/0rawan"
                     className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-2"
@@ -158,8 +157,8 @@ export default function Footer() {
                     <span className="sr-only">GitHub account</span>
                   </a>
                   <a
-                    href="#"
-                    className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-2"
+                    href="https://www.linkedin.com/in/rawan-mustafa-087725140/"
+                    className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-2 "
                   >
                     <svg
                       className="w-4 h-4"
@@ -175,7 +174,7 @@ export default function Footer() {
                 <li className="mb-4 flex">
                   <a
                     href="https://tailwindcss.com/"
-                    className="hover:underline"
+                    className="hover:underline text-nowrap"
                   >
                     Sarah Mustafa
                   </a>

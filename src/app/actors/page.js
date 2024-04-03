@@ -20,7 +20,7 @@ function Actors() {
       <div className="actor-hero  flex items-center h-[500px] p-12">
         <h1 className="font-body  text-white text-[42px] lg:text-[62px] font-light py-10">
           Behold the{" "}
-          <p className="font-bod text-[64px] lg:text-[110px] text-cente font-bold p-0 text-[#8784e8] opacity-95">
+          <p className="font-bod text-[56px] lg:text-[110px] text-cente font-bold p-0 text-[#8784e8] opacity-95">
             {" "}
             magic-makers
           </p>{" "}

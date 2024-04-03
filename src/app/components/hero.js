@@ -102,8 +102,6 @@ export default function Hero() {
               <i>Explore </i> a cinematic journey through the{" "}
               <i>digital aisles</i> of movie treasures.
             </h3>
-            <div className="hero_btn"></div>
-            <h2>(17)</h2>
           </div>
         </div>
         <div ref={bottom} id="hero_bottom">
