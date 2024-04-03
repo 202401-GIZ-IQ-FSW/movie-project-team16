@@ -133,7 +133,7 @@ export default function Footer() {
                 </li> */}
                 <li className="mb-4 flex">
                   <div
-                    className="hover:underline text-nowrap"
+                    className="text-sm md:text-base hover:underline text-nowrap"
                   >
                     Rawan Mustafa
                   </div>
@@ -174,7 +174,7 @@ export default function Footer() {
                 <li className="mb-4 flex">
                   <a
                     href="https://tailwindcss.com/"
-                    className="hover:underline text-nowrap"
+                    className="text-sm md:text-base  hover:underline text-nowrap"
                   >
                     Sarah Mustafa
                   </a>

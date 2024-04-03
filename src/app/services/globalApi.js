@@ -22,7 +22,7 @@ const searchMoviesByName = (name)=> axios.get(`${movieBaseUrl}/search/movie?quer
 const getMovieTrailer = (id) => axios.get(`${movieBaseUrl}/movie/${id}/videos?api_key=${api_key}`)
 
 const getActor = (id)=> axios.get(`${actorBaseUrl}/person/${id}?api_key=${api_key}`)
-const getActors = axios.get(`${actorBaseUrl}/person/popular?api_key=${api_key}`)
+const getActors = axios.get(`${actorBaseUrl}/trending/person/week?api_key=${api_key}`)
 
 export default{
     getMovieByGenreId,
