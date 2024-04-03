@@ -21,7 +21,7 @@ function SingleMovie({ params }) {
   return (
     <div className="relative bg-slate-100">
       <div className="body relative gap-12 p-12">
-        <div className="movie-details p-12 flex gap-12">
+        <div className="movie-details p-1 md:p-12 flex gap-12">
           <div className="movie-image  z-3">
             <Image
               className="rounded-lg flex"
